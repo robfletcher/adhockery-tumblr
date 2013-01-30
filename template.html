@@ -4,6 +4,7 @@
         <title>{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}{Title}</title>
 
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
         <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}" >
 
         <meta name="color:Accent" content="#4EA3D0">
@@ -142,14 +143,16 @@ textarea {
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 body {
   font: 18px/1.5 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #f9f9f6;
   color: #444444;
   text-shadow: 0px 1px 0px white;
   text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
-  width: 100%;
-  overflow-x: hidden;
 }
 blockquote {
   border-color: #a4c2d9;
@@ -424,10 +427,16 @@ ul.tags li a {
 }
 #posts:before {
   top: 0;
-  left: -10%;
-  width: 120%;
+  left: -100%;
+  width: 200%;
   height: 100%;
-  transform: skew(-4deg, 0deg) rotate(-3deg) scale(1.2, 1);
+  transform: skew(-4deg, 0deg) rotate(-3deg);
+}
+@media only screen and (min-width: 480px) {
+  #posts:before {
+    left: -20%;
+    width: 140%;
+  }
 }
 #posts h1 a {
   color: #444755;

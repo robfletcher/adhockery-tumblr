@@ -1,4 +1,3 @@
-* mobile viewport
 * FOUC
 * code prettify
 * better base font than Cabin
