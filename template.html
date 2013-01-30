@@ -227,9 +227,11 @@ a:visited:hover {
   color: #000;
   border-bottom: 3px solid #bf1a00;
 }
-a[href*="/dashboard"],
-a:visited[href*="/dashboard"] {
-  border-bottom: 0;
+a[rel~=tag]:before {
+  content: '#';
+}
+a[rel~=external]:after {
+  content: '\00a0\21D2';
 }
 .avatar {
   background-size: 64px 64px;
@@ -276,9 +278,6 @@ ul.tags li {
 }
 ul.tags li a {
   color: #999999;
-}
-ul.tags li a:before {
-  content: '#';
 }
 .banner {
   position: relative;
@@ -456,6 +455,7 @@ article footer {
   margin: 0 0 1.6875em 0;
   font-size: 0.8888888888888888em;
   line-height: 1.6875em;
+  margin-bottom: 3em;
 }
 article time,
 article .tags {
@@ -498,6 +498,21 @@ article .tags {
 }
 .photo img {
   width: 100%;
+}
+.photo figcaption {
+  margin-top: 1.5em;
+}
+.link a {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.4444444444444444em;
+  line-height: 1.0384615384615385em;
+  margin-bottom: 1.0384615384615385em;
+  border-bottom: 0;
+}
+.link a:hover,
+.link a:active {
+  color: #bf1a00;
 }
 pre {
   border-radius: 0.5em;
@@ -807,12 +822,12 @@ code .dec {
                     {/block:Photoset}
 
                     {block:Link}
-                        <div class="link_post">
-                            <a href="{URL}" class="link">{Name}<span class="arrow"></span></a>
-                        </div>
-                        {block:Description}
-                            {Description}
-                        {/block:Description}
+                        <figure class="link">
+                            <a rel="external" href="{URL}">{Name}</a>
+                            {block:Description}
+                                <figcaption>{Description}</figcaption>
+                            {/block:Description}
+                        </figure>
                     {/block:Link}
 
                     {block:Audio}

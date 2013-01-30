@@ -1,7 +1,7 @@
 * mobile viewport
 * FOUC
 * code prettify
-* other post types (link & quote most importantly)
+* better base font than Cabin
 * separate CSS file
 * update disqus paths
 * Google analytics

@@ -153,11 +153,14 @@ a, a:visited {
     color: #000;
     border-bottom: 3px solid @active-link-color;
   }
+}
 
-  // No border under the admin link
-  &[href*="/dashboard"] {
-    border-bottom: 0;
-  }
+a[rel~=tag]:before {
+  content: '#';
+}
+
+a[rel~=external]:after {
+  content: '\00a0\21D2';
 }
 
 // Primary styles
@@ -209,10 +212,6 @@ ul.tags {
 
     a {
       color: @muted-color;
-
-      &:before {
-        content: '#';
-      }
     }
   }
 }
@@ -351,6 +350,7 @@ article {
 
   footer {
     .small;
+    margin-bottom: 3em;
   }
 
   time, .tags {
@@ -399,8 +399,27 @@ article {
   }
 }
 
-.photo img {
-  width: 100%;
+.photo {
+  img {
+    width: 100%;
+  }
+
+  figcaption {
+    margin-top: 1.5em;
+  }
+}
+
+.link a {
+  display: inline-block;
+  margin: 0;
+  font-size: 1.4444444444444444em;
+  line-height: 1.0384615384615385em;
+  margin-bottom: 1.0384615384615385em;
+  border-bottom: 0;
+
+  &:hover, &:active {
+    color: @active-link-color;
+  }
 }
 
 // code samples
