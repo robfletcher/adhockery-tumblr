@@ -1,0 +1,470 @@
+@content-width: 660px;
+@content-gutter: 16px;
+
+@background-color: #f9f9f6;
+@text-color: #444;
+@muted-color: #999;
+@divider-color: #ccc;
+@heading-color: #444755;
+@border-color: #08c;
+@active-link-color: #bf1a00;
+@banner-color: white;
+@banner-shadow-1: #5c5f72;
+@banner-shadow-2: #a4c2d9;
+@splash-color: #d2e1eC;
+
+@base-font: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@heading-font: 'Galindo', cursive;
+@accent-font: 'Kaushan Script', cursive;
+@monospace-font: Menlo, Consolas, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+
+@break-tablet: 480px;
+@break-desktop: 1024px;
+
+@import "h5bp-base";
+
+// Stylistic mixins
+// ----------------------------------------
+.content {
+  width: 80%;
+  max-width: @content-width + (2 * @content-gutter);
+  margin: 0 auto;
+
+  @media only screen and (min-width: @break-tablet) {
+    width: 100%;
+    padding-left: @content-gutter;
+    padding-right: @content-gutter;
+  }
+}
+
+.centered-up-to(@breakpoint, @then-align: left) {
+  text-align: center;
+  @media only screen and (min-width: @breakpoint) {
+    text-align: @then-align;
+  }
+}
+
+.googie {
+  position: relative;
+
+  &:before {
+    pointer-events: none; // stops 3d transforms blocking clicks in webkit
+    content: "";
+    background-color: @splash-color;
+    position: absolute;
+    z-index: -1;
+    backface-visibility: hidden; // fixes aliasing when element is skewed or rotated
+  }
+}
+
+// Scaffolding
+// ----------------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 18px/1.5 @base-font;
+  background-color: @background-color;
+  color: @text-color;
+  text-shadow: 0px 1px 0px white;
+  text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+blockquote {
+  border-color: @banner-shadow-2;
+}
+
+// Vertical rhythm
+// ----------------------------------------
+
+h1 {
+  margin: 0;
+  font-size: 1.4444444444444444em;
+  line-height: 1.0384615384615385em;
+  margin-bottom: 1.0384615384615385em;
+}
+h2 {
+  margin: 0;
+  font-size: 1.3333333333333333em;
+  line-height: 1.125em;
+  margin-bottom: 1.125em;
+}
+h3 {
+  margin: 0;
+  font-size: 1.2222222222222223em;
+  line-height: 1.2272727272727273em;
+  margin-bottom: 1.2272727272727273em;
+}
+h4 {
+  margin: 0;
+  font-size: 1.1111111111111112em;
+  line-height: 1.35em;
+  margin-bottom: 1.35em;
+}
+p, ul, blockquote, pre, figcaption {
+  margin: 0 0 1.5em 0;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.small {
+  margin: 0 0 1.6875em 0;
+  font-size: 0.8888888888888888em;
+  line-height: 1.6875em;
+}
+// Headings/small
+// ----------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @heading-font;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  color: @heading-color;
+}
+
+// Preformatted text and code
+// ----------------------------------------
+
+// Allows line wrapping of 'pre'
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre, code, kbd, samp {
+  font: 1em/1.5 @monospace-font;
+}
+
+// Links
+// ----------------------------------------
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid #aaa;
+  transition: all linear 0.1s;
+
+  &:hover {
+    color: #000;
+    border-bottom: 3px solid @active-link-color;
+  }
+
+  // No border under the admin link
+  &[href*="/dashboard"] {
+    border-bottom: 0;
+  }
+}
+
+// Primary styles
+// ----------------------------------------
+
+.avatar {
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
+  border: 1px solid #eee;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+  display: block;
+  margin: 1em auto 1.2em;
+
+  @media only screen and (min-width: @break-tablet) {
+    background-size: 128px 128px;
+    width: 128px;
+    height: 128px;
+    border-radius: 128px;
+    margin: 1em auto 2em;
+    border-width: 0 0 1px 0;
+    border-color: rgba(255,255,255,0.8);
+  }
+
+  @media only screen and (min-width: @break-desktop) {
+    position: absolute;
+    top: 0.75em;
+    right: 0;
+    margin: 0;
+  }
+}
+
+.strapline {
+  font-variant: small-caps;
+}
+
+time {
+  color: @muted-color;
+}
+
+ul.tags {
+  padding: 0;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 0.25em;
+
+    a {
+      color: @muted-color;
+
+      &:before {
+        content: '#';
+      }
+    }
+  }
+}
+
+.banner {
+  .googie;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  &:before {
+    background-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
+    background-color: @active-link-color;
+    height: 150%;
+    width: 120%;
+    top: -12%;
+    left: -10%;
+    transform: skew(3deg) rotate(-1deg) translate(0, 1.5em);
+
+    @media only screen and (min-width: 961px) {
+      background-size: cover;
+    }
+  }
+}
+
+#main-nav {
+  .content;
+  .centered-up-to(@break-desktop, right);
+
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-family: @accent-font;
+
+  a {
+    margin: 0 0.65em;
+    font-size: 1.2em;
+    color: @banner-color;
+    text-shadow: 1px 1px 0px @banner-shadow-1;
+
+    &:hover {
+      border-color: @banner-shadow-2;
+    }
+
+    @media only screen and (min-width: @break-tablet) {
+      font-size: 1.5em;
+    }
+  }
+}
+
+#site-header {
+  .content;
+  .centered-up-to(@break-desktop);
+
+  color: @banner-color;
+  text-shadow: 1px 1px 0px @banner-shadow-1;
+
+  @media only screen and (min-width: @break-desktop) {
+    position: relative;
+    padding-bottom: 1em;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 0;
+    text-transform: lowercase;
+    text-shadow: 3px 3px 0px @banner-shadow-1;
+    text-shadow: 3px 3px 0px @banner-shadow-2, 7px 7px 0px @banner-shadow-1;
+
+    @media only screen and (min-width: @break-tablet) {
+      font-size: 62px;
+    }
+
+    @media only screen and (min-width: @break-desktop) {
+      font-size: 72px;
+    }
+
+    a {
+      color: @banner-color;
+      border: 0;
+      &:hover {
+        color: @banner-color;
+      }
+    }
+  }
+
+  @media only screen and (min-width: @break-desktop) {
+    h1, .strapline {
+      margin-right: 128px;
+    }
+  }
+}
+
+#posts {
+  .content;
+  .googie;
+
+  padding-top: 3em;
+
+  &:before {
+    top: 0;
+    left: -10%;
+    width: 120%;
+    height: 100%;
+    transform: skew(-4deg, 0deg) rotate(-3deg) scale(1.2, 1);
+  }
+
+  h1 a {
+    color: @heading-color;
+    border: 0;
+
+    &:hover {
+      color: @active-link-color;
+    }
+  }
+
+  &.archive {
+    padding-bottom: 5em;
+  }
+}
+
+article {
+  width: 100%;
+  margin: 3em 0;
+  padding: 0;
+  border-bottom: 1px solid @divider-color;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  footer {
+    .small;
+  }
+
+  time, .tags {
+    display: block;
+  }
+}
+
+.read_more {
+  font-family: @accent-font;
+  text-transform: lowercase;
+
+  &:after {
+    content: ' …';
+  }
+}
+
+.quote blockquote {
+  font-family: @accent-font;
+  margin: 0;
+  font-size: 1.4444444444444444em;
+  line-height: 1.0384615384615385em;
+  margin-bottom: 1.0384615384615385em;
+
+  display: block;
+  padding: 0 60px;
+  // width: 350px;
+
+  &:before, &:after {
+    color: #69c;
+    display: block;
+    font-size: 700%;
+    width: 50px;
+  }
+
+  &:before {
+    content: '\201C';
+    height: 0;
+    margin-left: -0.55em;
+  }
+
+  &:after {
+    content: '\201D';
+    height: 50px;
+    margin-top: -70px;
+    margin-left: 360px;
+  }
+}
+
+// code samples
+pre {
+  border-radius: 0.5em;
+  background: @text-color;
+  color: white;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  padding: 1.5em;
+}
+
+@import "vim-sunburst";
+
+#site-footer {
+  padding: 4em 0 8em;
+  overflow: hidden;
+  color: #717171;
+  text-shadow: 0 -1px 0 #222;
+  border-top: 1px solid #111;
+  background: #333;
+
+  @media only screen and (min-width: @break-tablet) {
+    padding: 3em 0;
+  }
+
+  > * {
+    .content;
+  }
+}
+
+.pagination {
+  margin: 3em 0;
+  text-align: center;
+
+  a {
+    @size: 2em;
+    display: inline-block;
+    width: @size;
+    height: @size;
+    line-height: @size;
+    border-radius: @size / 2;
+    margin-left: 1em;
+    background-color: @text-color;
+    color: white;
+    text-shadow: none;
+    border-bottom: none;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      background-color: @active-link-color;
+    }
+
+    &.current, &.current:hover {
+      background-color: @divider-color;
+      color: @muted-color;
+      cursor: not-allowed;
+    }
+  }
+
+}
+
+#disqus_thread {
+  margin-top: 1.5em;
+}
+
+@import "h5bp-mixins";
+@import "h5bp-print";

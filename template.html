@@ -1,0 +1,1148 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}{Title}</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}" >
+
+        <meta name="color:Accent" content="#4EA3D0">
+        <meta name="font:Body" content="'Helvetica Neue', Helvetica, Arial, sans-serif">
+        <meta name="if:Two column posts" content="1">
+
+        <!-- Appearance option -->
+        <meta name="if:Show bar on top" content="1">
+        <meta name="if:Show blog title" content="1">
+        <meta name="if:Show blog description" content="1">
+        <meta name="if:Show profile photo" content="1">
+        <meta name="if:Use endless scrolling" content="1">
+
+
+        <meta name="if:Show right column" content="1">
+        <meta name="if:Place timestamp in left column" content="1">
+        <meta name="if:Use larger font for quotes" content="0">
+        <meta name="if:Show image shadows" content="1">
+        <meta name="if:Show tags" content="1">
+        <meta name="if:Show post notes" content="1">
+        <meta name="if:Show copyright in footer" content="1">
+        <meta name="text:Disqus Shortname" content="adhockery">
+        <meta name="text:Google Analytics ID" content="">
+
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}">
+
+        <!-- HTML5 Shiv -->
+        <!--[if lt IE 9]>
+                <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
+        <![endif]-->
+
+        <link href="//fonts.googleapis.com/css?family=Cabin:400,600,400italic,600italic|Galindo|Kaushan+Script" rel="stylesheet" type="text/css">
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css" type="text/css">
+
+        <!-- Theme CSS -->
+        <style type="text/css" media="screen">
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+body {
+  font-size: 1em;
+  line-height: 1.4;
+}
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+img {
+  vertical-align: middle;
+}
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.content {
+  width: 80%;
+  max-width: 692px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 480px) {
+  .content {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.googie {
+  position: relative;
+}
+.googie:before {
+  pointer-events: none;
+  content: "";
+  background-color: #d2e1ec;
+  position: absolute;
+  z-index: -1;
+  backface-visibility: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 18px/1.5 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f9f9f6;
+  color: #444444;
+  text-shadow: 0px 1px 0px white;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+  width: 100%;
+  overflow-x: hidden;
+}
+blockquote {
+  border-color: #a4c2d9;
+}
+h1 {
+  margin: 0;
+  font-size: 1.4444444444444444em;
+  line-height: 1.0384615384615385em;
+  margin-bottom: 1.0384615384615385em;
+}
+h2 {
+  margin: 0;
+  font-size: 1.3333333333333333em;
+  line-height: 1.125em;
+  margin-bottom: 1.125em;
+}
+h3 {
+  margin: 0;
+  font-size: 1.2222222222222223em;
+  line-height: 1.2272727272727273em;
+  margin-bottom: 1.2272727272727273em;
+}
+h4 {
+  margin: 0;
+  font-size: 1.1111111111111112em;
+  line-height: 1.35em;
+  margin-bottom: 1.35em;
+}
+p,
+ul,
+blockquote,
+pre,
+figcaption {
+  margin: 0 0 1.5em 0;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.small {
+  margin: 0 0 1.6875em 0;
+  font-size: 0.8888888888888888em;
+  line-height: 1.6875em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Galindo', cursive;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #444755;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+pre,
+code,
+kbd,
+samp {
+  font: 1em/1.5 Menlo, Consolas, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid #aaa;
+  transition: all linear 0.1s;
+}
+a:hover,
+a:visited:hover {
+  color: #000;
+  border-bottom: 3px solid #bf1a00;
+}
+a[href*="/dashboard"],
+a:visited[href*="/dashboard"] {
+  border-bottom: 0;
+}
+.avatar {
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 64px;
+  border: 1px solid #eee;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  display: block;
+  margin: 1em auto 1.2em;
+}
+@media only screen and (min-width: 480px) {
+  .avatar {
+    background-size: 128px 128px;
+    width: 128px;
+    height: 128px;
+    border-radius: 128px;
+    margin: 1em auto 2em;
+    border-width: 0 0 1px 0;
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .avatar {
+    position: absolute;
+    top: 0.75em;
+    right: 0;
+    margin: 0;
+  }
+}
+.strapline {
+  font-variant: small-caps;
+}
+time {
+  color: #999999;
+}
+ul.tags {
+  padding: 0;
+}
+ul.tags li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 0.25em;
+}
+ul.tags li a {
+  color: #999999;
+}
+ul.tags li a:before {
+  content: '#';
+}
+.banner {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.banner:before {
+  pointer-events: none;
+  content: "";
+  background-color: #d2e1ec;
+  position: absolute;
+  z-index: -1;
+  backface-visibility: hidden;
+}
+.banner:before {
+  background-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
+  background-color: #bf1a00;
+  height: 150%;
+  width: 120%;
+  top: -12%;
+  left: -10%;
+  transform: skew(3deg) rotate(-1deg) translate(0, 1.5em);
+}
+@media only screen and (min-width: 961px) {
+  .banner:before {
+    background-size: cover;
+  }
+}
+#main-nav {
+  width: 80%;
+  max-width: 692px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-family: 'Kaushan Script', cursive;
+}
+@media only screen and (min-width: 480px) {
+  #main-nav {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #main-nav {
+    text-align: right;
+  }
+}
+#main-nav a {
+  margin: 0 0.65em;
+  font-size: 1.2em;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #5c5f72;
+}
+#main-nav a:hover {
+  border-color: #a4c2d9;
+}
+@media only screen and (min-width: 480px) {
+  #main-nav a {
+    font-size: 1.5em;
+  }
+}
+#site-header {
+  width: 80%;
+  max-width: 692px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 0px #5c5f72;
+}
+@media only screen and (min-width: 480px) {
+  #site-header {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #site-header {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #site-header {
+    position: relative;
+    padding-bottom: 1em;
+  }
+}
+#site-header h1 {
+  letter-spacing: -1px;
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  text-transform: lowercase;
+  text-shadow: 3px 3px 0px #5c5f72;
+  text-shadow: 3px 3px 0px #a4c2d9, 7px 7px 0px #5c5f72;
+}
+@media only screen and (min-width: 480px) {
+  #site-header h1 {
+    font-size: 62px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #site-header h1 {
+    font-size: 72px;
+  }
+}
+#site-header h1 a {
+  color: #ffffff;
+  border: 0;
+}
+#site-header h1 a:hover {
+  color: #ffffff;
+}
+@media only screen and (min-width: 1024px) {
+  #site-header h1,
+  #site-header .strapline {
+    margin-right: 128px;
+  }
+}
+#posts {
+  width: 80%;
+  max-width: 692px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 3em;
+}
+@media only screen and (min-width: 480px) {
+  #posts {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+#posts:before {
+  pointer-events: none;
+  content: "";
+  background-color: #d2e1ec;
+  position: absolute;
+  z-index: -1;
+  backface-visibility: hidden;
+}
+#posts:before {
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  transform: skew(-4deg, 0deg) rotate(-3deg) scale(1.2, 1);
+}
+#posts h1 a {
+  color: #444755;
+  border: 0;
+}
+#posts h1 a:hover {
+  color: #bf1a00;
+}
+#posts.archive {
+  padding-bottom: 5em;
+}
+article {
+  width: 100%;
+  margin: 3em 0;
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
+}
+article:first-child {
+  margin-top: 0;
+}
+article:last-child {
+  border-bottom: 0;
+}
+article footer {
+  margin: 0 0 1.6875em 0;
+  font-size: 0.8888888888888888em;
+  line-height: 1.6875em;
+}
+article time,
+article .tags {
+  display: block;
+}
+.read_more {
+  font-family: 'Kaushan Script', cursive;
+  text-transform: lowercase;
+}
+.read_more:after {
+  content: ' …';
+}
+.quote blockquote {
+  font-family: 'Kaushan Script', cursive;
+  margin: 0;
+  font-size: 1.4444444444444444em;
+  line-height: 1.0384615384615385em;
+  margin-bottom: 1.0384615384615385em;
+  display: block;
+  padding: 0 60px;
+}
+.quote blockquote:before,
+.quote blockquote:after {
+  color: #69c;
+  display: block;
+  font-size: 700%;
+  width: 50px;
+}
+.quote blockquote:before {
+  content: '\201C';
+  height: 0;
+  margin-left: -0.55em;
+}
+.quote blockquote:after {
+  content: '\201D';
+  height: 50px;
+  margin-top: -70px;
+  margin-left: 360px;
+}
+pre {
+  border-radius: 0.5em;
+  background: #444444;
+  color: white;
+  text-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  padding: 1.5em;
+}
+/* Pretty printing styles. Used with prettify.js. */
+/* Vim sunburst theme by David Leibovic */
+pre .str,
+code .str {
+  color: #65B042;
+}
+pre .kwd,
+code .kwd {
+  color: #E28964;
+}
+pre .com,
+code .com {
+  color: #AEAEAE;
+  font-style: italic;
+}
+pre .typ,
+code .typ {
+  color: #89bdff;
+}
+pre .lit,
+code .lit {
+  color: #3387CC;
+}
+pre .pun,
+code .pun {
+  color: #fff;
+}
+pre .pln,
+code .pln {
+  color: #fff;
+}
+pre .tag,
+code .tag {
+  color: #89bdff;
+}
+pre .atn,
+code .atn {
+  color: #bdb76b;
+}
+pre .atv,
+code .atv {
+  color: #65B042;
+}
+pre .dec,
+code .dec {
+  color: #3387CC;
+}
+@media print {
+  pre .str,
+  code .str {
+    color: #060;
+  }
+  pre .kwd,
+  code .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+  pre .com,
+  code .com {
+    color: #600;
+    font-style: italic;
+  }
+  pre .typ,
+  code .typ {
+    color: #404;
+    font-weight: bold;
+  }
+  pre .lit,
+  code .lit {
+    color: #044;
+  }
+  pre .pun,
+  code .pun {
+    color: #440;
+  }
+  pre .pln,
+  code .pln {
+    color: #000;
+  }
+  pre .tag,
+  code .tag {
+    color: #006;
+    font-weight: bold;
+  }
+  pre .atn,
+  code .atn {
+    color: #404;
+  }
+  pre .atv,
+  code .atv {
+    color: #060;
+  }
+}
+#site-footer {
+  padding: 4em 0 8em;
+  overflow: hidden;
+  color: #717171;
+  text-shadow: 0 -1px 0 #222222;
+  border-top: 1px solid #111;
+  background: #333;
+}
+@media only screen and (min-width: 480px) {
+  #site-footer {
+    padding: 3em 0;
+  }
+}
+#site-footer > * {
+  width: 80%;
+  max-width: 692px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 480px) {
+  #site-footer > * {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.pagination {
+  margin: 1.5em 0;
+  text-align: center;
+}
+.pagination a {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border-radius: 1em;
+  margin-left: 1em;
+  background-color: #444444;
+  color: white;
+  text-shadow: none;
+  border-bottom: none;
+}
+.pagination a:first-child {
+  margin-left: 0;
+}
+.pagination a:hover {
+  background-color: #bf1a00;
+}
+.pagination a.current,
+.pagination a.current:hover {
+  background-color: #cccccc;
+  color: #999999;
+  cursor: not-allowed;
+}
+#disqus_thread {
+  margin-top: 1.5em;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+
+  *text-indent: -9999px;
+}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+.invisible {
+  visibility: hidden;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+        </style>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+    </head>
+    <body>
+        <div class="banner">
+            <nav id="main-nav">
+                {block:Pages}
+                    <a href="{URL}">{Label}</a>
+                {/block:Pages}
+                {block:AskEnabled}<a href="/ask" class="ask"><span class="icon"></span>ask me anything</a>{/block:AskEnabled}
+                {block:SubmissionsEnabled}<a href="/submit" class="submit"><span class="icon"></span>submit a post</a>{/block:SubmissionsEnabled}
+                <a href="{RSS}" class="rss"><span class="icon"></span>Feed</a>
+                <a href="/archive" class="archive"><span class="icon"></span>Archive</a>
+            </nav>
+
+            <header id="site-header">
+                {block:IfShowBlogTitle}<h1><a href="/">{Title}</a></h1>{/block:IfShowBlogTitle}
+                {block:IfShowBlogDescription}{block:Description}<p class="strapline">{Description}</p>{/block:Description}{/block:IfShowBlogDescription}
+                {block:IfShowProfilePhoto}
+                    <img src="{PortraitURL-128}" class="avatar"></a>
+                {/block:IfShowProfilePhoto}
+            </header>
+        </div>
+
+        <section id="posts">
+            <!-- START POSTS -->
+            {block:Posts}
+
+                <article class="post">
+
+                    {block:Photo}
+                        <figure class="photo">
+                             {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"> {LinkCloseTag}{Question}
+                            <figcaption>
+                                {block:Caption}{Caption}{/block:Caption}
+                            </figcaption>
+                        </figure>
+                    {/block:Photo}
+
+                    {block:Photoset}
+                        <div class="photoset">{Photoset-700}</div>
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Photoset}
+
+                    {block:Link}
+                        <div class="link_post">
+                            <a href="{URL}" class="link">{Name}<span class="arrow"></span></a>
+                        </div>
+                        {block:Description}
+                            {Description}
+                        {/block:Description}
+                    {/block:Link}
+
+                    {block:Audio}
+                        <div class="audio">{AudioPlayerBlack}</div>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Audio}
+
+                    {block:Video}
+                        <div class="video">{Video-700}</div>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Video}
+
+                    {block:Text}
+                        {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+                        {Body}
+                    {/block:Text}
+
+                    {block:Answer}
+                        <figure class="question">
+                            <blockquote>
+                                {Question}
+                            </blockquote>
+                            <figcaption>
+                                <img src="{AskerPortraitURL-24}" width="24" height="24" /> {Asker}
+                            </figcaption>
+                        <figure>
+                        <div class="answer">{Answer}</div>
+                    {/block:Answer}
+
+                    {block:Quote}
+                        <figure class="quote">
+                            <blockquote>{Quote}</blockquote>
+                            {block:Source}
+                                <figcaption>&mdash; {Source}</figcaption>
+                            {/block:Source}
+                        </figure>
+                    {/block:Quote}
+
+                    {block:Chat}
+                        {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+                        <ul class="conversation">
+                            {block:Lines}
+                                <li class="chat_line user{UserNumber}">
+                                    {block:Label}
+                                        <strong>{Label}</strong>
+                                    {/block:Label}
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                    {/block:Chat}
+
+                    {block:ContentSource}
+                        <footer class="content_source">
+                            <a href="{SourceURL}">
+                                {lang:Source}:
+                                {block:SourceLogo}
+                                    <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                                {/block:SourceLogo}
+                                {block:NoSourceLogo}
+                                    {SourceTitle}
+                                {/block:NoSourceLogo}
+                            </a>
+                        </footer>
+                    {/block:ContentSource}
+
+                    <footer class="post_info">
+                        {block:IfShowPostNotes}
+                        {block:NoteCount}
+                            <div class="notecount">
+                                <a href="{Permalink}#notes">{NoteCount} notes</a>
+                            </div>
+                       {/block:NoteCount}
+                        {/block:IfShowPostNotes}
+
+                        {block:IfShowTags}
+                        {block:HasTags}
+                            <ul class="tags">
+                            {block:Tags}
+                                <li><a rel="tag" href="{TagURL}">{Tag}</a></li>
+                            {/block:Tags}
+                            </ul>
+                        {/block:HasTags}
+                        {/block:IfShowTags}
+
+                        {block:PostNotes}
+                            <section class="post_notes">
+                                <a name="notes">
+                                    {PostNotes}
+                                </a>
+                            </section>
+                        {/block:PostNotes}
+
+                        {block:IfDisqusShortname}
+                        {block:Permalink}
+                            <div id="disqus_thread"></div>
+                            <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+                            <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+                        {/block:Permalink}
+                        {/block:IfDisqusShortname}
+                    </footer>
+                </article>
+            {/block:Posts}
+
+            {block:Pagination}
+                <nav class="pagination">
+                {block:PreviousPage}
+                    <a rel="prev" href="{PreviousPage}">&laquo;</a>
+                {/block:PreviousPage}
+
+                {block:JumpPagination length="5"}
+                    {block:CurrentPage}
+                        <a class="current" href="#">{PageNumber}</a>
+                    {/block:CurrentPage}
+
+                    {block:JumpPage}
+                        <a href="{URL}">{PageNumber}</a>
+                    {/block:JumpPage}
+                {/block:JumpPagination}
+
+                {block:NextPage}
+                    <a rel="next" href="{NextPage}">&raquo;</a>
+                {/block:NextPage}
+                </nav>
+            {/block:Pagination}
+            <!-- END POSTS -->
+        </section>
+
+        {block:IfDisqusShortname}
+            <script type="text/javascript">
+            //<![CDATA[
+            (function() {
+                var links = document.getElementsByTagName('a');
+                var query = '?';
+                for(var i = 0; i < links.length; i++) {
+                    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+                        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                    }
+                }
+                document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+            })();
+            //]]>
+            </script>
+        {/block:IfDisqusShortname}
+
+        <footer id="site-footer">
+            <p>
+                {block:IfShowCopyrightInFooter}
+                <small class="copyright">&copy; {CopyrightYears} {Title}</small>
+                {/block:IfShowCopyrightInFooter}
+            </p>
+        </footer>
+
+        {block:IfUseEndlessScrolling}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="http://assets.tumblr.com/javascript/tumblelog.js"></script>
+        <script>
+            var Tumblelog = {};
+
+            // AJAX
+            Tumblelog.Ajax = (function(url, callbackFunction) {
+                this.bindFunction = function (caller, object) {
+                    return function() {
+                        return caller.apply(object, [object]);
+                    };
+                };
+
+                this.stateChange = function (object) {
+                    if (this.request.readyState==4) this.callbackFunction(this.request.responseText);
+                };
+
+                this.getRequest = function() {
+                    if (window.ActiveXObject)
+                        return new ActiveXObject('Microsoft.XMLHTTP');
+                    else if (window.XMLHttpRequest)
+                        return new XMLHttpRequest();
+                    return false;
+                };
+
+                this.postBody = (arguments[2] || "");
+                this.callbackFunction=callbackFunction;
+                this.url=url;
+                this.request = this.getRequest();
+
+                if(this.request) {
+                    var req = this.request;
+                    req.onreadystatechange = this.bindFunction(this.stateChange, this);
+
+                    if (this.postBody!=="") {
+                        req.open("POST", url, true);
+                        req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                        req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                        req.setRequestHeader('Connection', 'close');
+                    } else {
+                        req.open("GET", url, true);
+                    }
+
+                    req.send(this.postBody);
+                }
+            });
+
+            // Infinite Scroll
+            Tumblelog.Infinite = (function() {
+
+                var _$window          = $(window);
+                var _$posts           = $('#posts');
+                var _trigger_post     = null;
+
+                var _current_page     = {CurrentPage};
+                var _total_pages      = {TotalPages};
+                var _url              = document.location.href;
+                var _infinite_timeout = null;
+                var _is_loading       = false;
+                var _posts_loaded     = false;
+
+                var _Ajax = Tumblelog.Ajax;
+
+                function init() {
+                    set_trigger();
+                    enable_scroll();
+                }
+
+                function set_trigger () {
+                    var $all_posts = _$posts.find('li.post');
+
+                    if (!_posts_loaded) {
+                        _posts_loaded = $all_posts.length;
+                    }
+
+                    if (_posts_loaded >= 4) {
+                        _trigger_post = _$posts.find('li.post:eq(' + ($all_posts.length - 4) + ')').get(0);
+                    } else if (_posts_loaded >= 3) {
+                        _trigger_post = _$posts.find('li.post:eq(' + ($all_posts.length - 3) + ')').get(0);
+                    } else {
+                        _trigger_post = _$posts.find('li.post:last').get(0);
+                    }
+                };
+
+                function in_viewport (el) {
+                    if (el == null) return;
+                    var top = el.offsetTop;
+                    var height = el.offsetHeight;
+
+                    while (el.offsetParent) {
+                        el = el.offsetParent;
+                        top += el.offsetTop;
+                    }
+
+                    return (top < (window.pageYOffset + window.innerHeight));
+                };
+
+                function enable_scroll() {
+                    $('#footer .pagination').hide();
+                    _$window.scroll(function(){
+                        clearTimeout(_infinite_timeout);
+                        infinite_timeout = setTimeout(infinite_scroll, 100);
+                    });
+                }
+
+                function disable_scroll() {
+                    clearTimeout(_infinite_timeout);
+                    $(window).unbind('scroll');
+                }
+
+                function infinite_scroll() {
+                    if (_is_loading) return;
+
+                    if (in_viewport(_trigger_post)) {
+                        load_more_posts(); // w00t
+                    }
+                };
+
+                function load_more_posts() {
+                    if (_is_loading) return;
+                    _is_loading = true;
+
+                    // Build URL
+                    if (_url.charAt(_url.length - 1) != '/') _url += '/';
+                    if (_current_page === 1) _url += 'page/1';
+                    _current_page++;
+                    _url = _url.replace('page/' + (_current_page - 1), 'page/' + _current_page);
+
+                    // Fetch
+                    _Ajax(_url, function(data) {
+                        var new_posts_html = data.split('<!-- START' + ' POSTS -->')[1].split('<!-- END' + ' POSTS -->')[0];
+                        var $new_posts = $('#posts', data);
+
+                        // Insert posts and update counters
+                        $('#posts').append(new_posts_html);
+                        _posts_loaded = $new_posts.find('li.post').length;
+
+                        if ((_posts_loaded > 0) && (_current_page < _total_pages)) {
+                            set_trigger();
+                            _is_loading = false;
+                        } else {
+                            disable_scroll();
+                        }
+                    });
+
+                    // Stats
+                    {block:IfGoogleAnalyticsID}
+                        if (typeof window._gaq != 'undefined') {
+                            _gaq.push(['_trackPageview', _url]);
+                        }
+                    {/block:IfGoogleAnalyticsID}
+                }
+
+                return {
+                    init: init
+                };
+            });
+
+            $(function() {
+                {block:IndexPage}
+                if ( !($.browser.msie && (parseInt($.browser.version, 10) < 9) ) ) {
+                    var InfiniteScroll = new Tumblelog.Infinite;
+                    InfiniteScroll.init();
+                }
+                {/block:IndexPage}
+            });
+        </script>
+        {/block:IfUseEndlessScrolling}
+
+        {block:IfGoogleAnalyticsID}
+            <script>
+                var _gaq=[['_setAccount','{text:Google Analytics ID}'],['_trackPageview']];
+                        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                        s.parentNode.insertBefore(g,s)}(document,'script'));
+            </script>
+        {/block:IfGoogleAnalyticsID}
+    </body>
+</html>
