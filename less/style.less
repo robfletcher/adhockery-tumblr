@@ -375,28 +375,32 @@ article {
   margin-bottom: 1.0384615384615385em;
 
   display: block;
-  padding: 0 60px;
-  // width: 350px;
+  padding: 0 2em;
+  position: relative;
 
   &:before, &:after {
-    color: #69c;
+    position: absolute;
+    top: 0;
     display: block;
-    font-size: 700%;
-    width: 50px;
+    font-size: 2em;
+    line-height: 1em;
+    width: 1em;
+    height: 100%;
   }
 
   &:before {
     content: '\201C';
-    height: 0;
-    margin-left: -0.55em;
+    left: 0;
   }
 
   &:after {
     content: '\201D';
-    height: 50px;
-    margin-top: -70px;
-    margin-left: 360px;
+    right: 0;
   }
+}
+
+.photo img {
+  width: 100%;
 }
 
 // code samples
