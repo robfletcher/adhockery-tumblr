@@ -969,6 +969,30 @@ code .dec {
             <!-- END POSTS -->
         </section>
 
+        <footer id="site-footer">
+            <p>
+                {block:IfShowCopyrightInFooter}
+                <small class="copyright">&copy; {CopyrightYears} {Title}</small>
+                {/block:IfShowCopyrightInFooter}
+            </p>
+        </footer>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js"></script>
+        <script>
+          $(function() {
+            var found = false;
+
+            $("pre code").parent().each(function() {
+              if (!$(this).hasClass("prettyprint")) {
+                $(this).addClass("prettyprint");
+                found = true;
+              }
+            });
+            if (found) { prettyPrint(); }
+          });
+        </script>
+
         {block:IfDisqusShortname}
             <script type="text/javascript">
             //<![CDATA[
@@ -985,14 +1009,6 @@ code .dec {
             //]]>
             </script>
         {/block:IfDisqusShortname}
-
-        <footer id="site-footer">
-            <p>
-                {block:IfShowCopyrightInFooter}
-                <small class="copyright">&copy; {CopyrightYears} {Title}</small>
-                {/block:IfShowCopyrightInFooter}
-            </p>
-        </footer>
 
         {block:IfGoogleAnalyticsID}
             <script>
