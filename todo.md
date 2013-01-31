@@ -1,6 +1,6 @@
 * better base font than Cabin
+* scrollbars on code
 * separate CSS file
 * update disqus paths
-* Google analytics
 * migrate domain
 * SCSS
