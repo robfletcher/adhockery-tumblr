@@ -1,0 +1,9 @@
+{
+	"name": "adhockery-tumblr-theme",
+	"version": "1.0.0",
+	"dependencies": {
+		"grunt": ">= 0.4.0rc7",
+		"grunt-contrib-less": ">= 0.5.0rc7",
+		"grunt-contrib-watch": ">= 0.2.0rc7"
+	}
+}
