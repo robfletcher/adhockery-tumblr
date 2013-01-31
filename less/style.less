@@ -316,13 +316,13 @@ ul.tags {
 
   &:before {
     top: 0;
-    left: -50%;
-    width: 200%;
+    left: 0;
+    width: 100%;
     height: 100%;
-    .transform(skew(-4deg, 0deg) rotate(-3deg));
+    .transform(skewY(-4deg) scaleX(1.4));
+
     @media only screen and (min-width: @break-tablet) {
-      left: -20%;
-      width: 140%;
+      .transform(skew(-4deg, 0) scale(1.4, 1) rotate(-2deg));
     }
   }
 
