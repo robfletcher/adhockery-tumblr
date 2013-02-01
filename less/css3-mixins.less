@@ -38,11 +38,16 @@
 	    -ms-transform: @string;
 	     -o-transform: @string;
 	        transform: @string;
-	.backface-visibility;
 }
 
 .backface-visibility(@visibility: hidden) {
 	-webkit-backface-visibility: @visibility;
 	   -moz-backface-visibility: @visibility;
 	        backface-visibility: @visibility;
+}
+
+.background-clip(@box) {
+	-webkit-background-clip: @box;
+	   -moz-background-clip: @box;
+	        background-clip: @box;
 }

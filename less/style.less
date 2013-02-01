@@ -49,11 +49,19 @@
   position: relative;
 
   &:before {
-    pointer-events: none; // stops 3d transforms blocking clicks in webkit
     content: "";
     background-color: @splash-color;
     position: absolute;
     z-index: -1;
+
+    pointer-events: none; // stops 3d transforms blocking clicks in webkit
+
+   .backface-visibility;
+
+    // crazy fix for iOS browsers which will render horrible aliasing on skewed / rotated
+    // elements without this
+    padding: 2px;
+    .background-clip(content-box);
   }
 }
 
