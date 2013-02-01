@@ -27,15 +27,9 @@
 // Stylistic mixins
 // ----------------------------------------
 .content {
-  width: 80%;
-  max-width: @content-width + (2 * @content-gutter);
+  width: 100%;
+  max-width: @content-width;
   margin: 0 auto;
-
-  @media only screen and (min-width: @break-tablet) {
-    width: 100%;
-    padding-left: @content-gutter;
-    padding-right: @content-gutter;
-  }
 }
 
 .centered-up-to(@breakpoint, @then-align: left) {
@@ -45,23 +39,69 @@
   }
 }
 
-.googie {
-  position: relative;
-
-  &:before {
+.pseudo-background {
     content: "";
-    background-color: @splash-color;
     position: absolute;
-    z-index: -1;
 
     pointer-events: none; // stops 3d transforms blocking clicks in webkit
 
-   .backface-visibility;
+    .backface-visibility;
 
     // crazy fix for iOS browsers which will render horrible aliasing on skewed / rotated
     // elements without this
     padding: 2px;
     .background-clip(content-box);
+}
+
+.googie-banner {
+  position: relative;
+
+  &:before {
+    .pseudo-background;
+    background-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
+    background-color: @active-link-color;
+    background-position: top center;
+    z-index: -2;
+
+    height: 150%;
+    width: 120%;
+    top: -12%;
+    left: -10%;
+    .transform(skew(3deg) rotate(-1deg) translate(0, 1.5em));
+
+    @media only screen and (min-width: 961px) {
+      background-size: cover;
+    }
+  }
+}
+
+.googie {
+  position: relative;
+
+  &:before, &:after {
+    .pseudo-background;
+    width: 100%;
+    height: 100%;
+
+    .transform(skewY(-4deg) scaleX(1.4));
+
+    @media only screen and (min-width: @break-tablet) {
+      .transform(skew(-2deg, -2deg) rotate(-1deg) translateY(-1em) scaleX(1.1));
+    }
+  }
+
+  &:before {
+    background-color: @splash-color;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &:after {
+    background-color: fadeout(darken(@splash-color, 20%), 20%);
+    top: 6px;
+    left: 6px;
+    z-index: -2;
   }
 }
 
@@ -227,24 +267,10 @@ ul.tags {
 }
 
 .banner {
-  .googie;
+  .googie-banner;
   width: 100%;
   padding: 0;
   margin: 0;
-
-  &:before {
-    background-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
-    background-color: @active-link-color;
-    height: 150%;
-    width: 120%;
-    top: -12%;
-    left: -10%;
-    .transform(skew(3deg) rotate(-1deg) translate(0, 1.5em));
-
-    @media only screen and (min-width: 961px) {
-      background-size: cover;
-    }
-  }
 }
 
 #main-nav {
@@ -318,21 +344,8 @@ ul.tags {
 
 #posts {
   .content;
-  .googie;
 
   padding-top: 3em;
-
-  &:before {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    .transform(skewY(-4deg) scaleX(1.4));
-
-    @media only screen and (min-width: @break-tablet) {
-      .transform(skew(-4deg, -2deg) scale(1.3, 1) rotate(-2deg));
-    }
-  }
 
   h1 a {
     color: @heading-color;
@@ -350,9 +363,10 @@ ul.tags {
 
 article {
   width: 100%;
-  margin: 3em 0;
-  padding: 0;
-  border-bottom: 1px solid @divider-color;
+  margin: 1.5em 0;
+  padding: 1.5em;
+
+  .googie;
 
   &:first-child {
     margin-top: 0;
@@ -364,7 +378,11 @@ article {
 
   footer {
     .small;
-    margin-bottom: 3em;
+    margin-bottom: 0;
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 
   time, .tags {
