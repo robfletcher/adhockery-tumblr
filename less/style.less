@@ -216,34 +216,6 @@ a[rel~=external]:after {
 // Primary styles
 // ----------------------------------------
 
-.avatar {
-  background-size: 64px 64px;
-  width: 64px;
-  height: 64px;
-  .border-radius(64px);
-  border: 1px solid #eee;
-  .inner-shadow(0, 1px, 3px, 0.3);
-  display: block;
-  margin: 1em auto 1.2em;
-
-  @media only screen and (min-width: @break-tablet) {
-    background-size: 128px 128px;
-    width: 128px;
-    height: 128px;
-    .border-radius(128px);
-    margin: 1em auto 2em;
-    border-width: 0 0 1px 0;
-    border-color: rgba(255,255,255,0.8);
-  }
-
-  @media only screen and (min-width: @break-desktop) {
-    position: absolute;
-    top: 0.75em;
-    right: 0;
-    margin: 0;
-  }
-}
-
 .strapline {
   font-variant: small-caps;
 }
@@ -338,6 +310,34 @@ ul.tags {
   @media only screen and (min-width: @break-desktop) {
     h1, .strapline {
       margin-right: 128px;
+    }
+  }
+
+  .avatar {
+    background-size: 64px 64px;
+    width: 64px;
+    height: 64px;
+    .border-radius(64px);
+    border: 1px solid #eee;
+    .inner-shadow(0, 1px, 3px, 0.3);
+    display: block;
+    margin: 1em auto 1.2em;
+
+    @media only screen and (min-width: @break-tablet) {
+      background-size: 128px 128px;
+      width: 128px;
+      height: 128px;
+      .border-radius(128px);
+      margin: 1em auto 2em;
+      border-width: 0 0 1px 0;
+      border-color: rgba(255,255,255,0.8);
+    }
+
+    @media only screen and (min-width: @break-desktop) {
+      position: absolute;
+      top: 0.75em;
+      right: 0;
+      margin: 0;
     }
   }
 }
