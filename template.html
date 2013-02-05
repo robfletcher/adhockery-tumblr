@@ -235,17 +235,22 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.0rc1/zepto.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js"></script>
         <script>
-          $(function() {
-            var found = false;
-
-            $("pre code").parent().each(function() {
-              if (!$(this).hasClass("prettyprint")) {
-                $(this).addClass("prettyprint");
-                found = true;
-              }
+        // ripped off from http://simonask.tumblr.com/
+        $(function() {
+            $('pre code').parent().each(function() {
+                var text = $(this).text();
+                if (text.indexOf('!prettify') == 0) {
+                    $(this).addClass('prettyprint');
+                    var needle = '!prettify ';
+                    var newline_pos = text.indexOf('\n');
+                    if (text.substring(0, needle.length) == needle) {
+                        $(this).addClass(text.substring(needle.length, newline_pos));
+                    }
+                    $(this).text(text.substring(newline_pos+1));
+                }
             });
-            if (found) { prettyPrint(); }
-          });
+            prettyPrint();
+        });
         </script>
 
         {block:IfDisqusShortname}
