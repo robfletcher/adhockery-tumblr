@@ -2,26 +2,26 @@ module.exports = (grunt) ->
 
   grunt.initConfig
     less:
-      src:
+      dist:
         files:
-          'build/style.css': 'less/style.less'
+          'css/theme.css': 'less/theme.less'
     combine:
       dist:
-        input: 'template.html'
+        input: 'src/template.html'
         output: 'dist/template.html'
         tokens: [
           token: '{{css}}'
-          file: 'build/style.css'
+          file: 'css/theme.css'
         ]
     watch:
       less:
-        files: ['less/*.less']
-        tasks: ['less:src']
+        files: ['less/*.*']
+        tasks: ['less']
       combine:
-      	files: ['template.html', 'build/style.css']
-      	tasks: ['combine:dist']
+      	files: ['src/template.html', 'css/theme.css']
+      	tasks: ['combine']
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-combine'
-  grunt.registerTask 'default', ['less:src', 'combine:dist']
+  grunt.registerTask 'default', ['less', 'combine']
