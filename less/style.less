@@ -86,7 +86,7 @@
     .transform(skewY(-4deg) scaleX(1.4));
 
     @media only screen and (min-width: @break-tablet) {
-      .transform(skew(-2deg, -2deg) rotate(-1deg) translateY(-1em) scaleX(1.1));
+      .transform(skew(-2deg, -2deg) rotate(-1deg) scaleX(1.1));
     }
   }
 
@@ -117,7 +117,8 @@ html, body {
 }
 
 body {
-  font: 18px/1.5 @base-font;
+  font-family: @base-font;
+  font-weight: 500; // todo: only if web-font
   background-color: @background-color;
   color: @text-color;
   text-shadow: 0px 1px 0px white;
@@ -128,43 +129,49 @@ blockquote {
   border-color: @banner-shadow-2;
 }
 
-// Vertical rhythm
+// Vertical rhythm (modular scale 16px @ 1:1.618 / 660px @ 1:1.618)
 // ----------------------------------------
 
-h1 {
-  margin: 0;
-  font-size: 1.4444444444444444em;
-  line-height: 1.0384615384615385em;
-  margin-bottom: 1.0384615384615385em;
+body {
+  font-size: 16px;
+  line-height: 1.5;
 }
-h2 {
-  margin: 0;
-  font-size: 1.3333333333333333em;
-  line-height: 1.125em;
-  margin-bottom: 1.125em;
-}
-h3 {
-  margin: 0;
-  font-size: 1.2222222222222223em;
-  line-height: 1.2272727272727273em;
-  margin-bottom: 1.2272727272727273em;
-}
-h4 {
-  margin: 0;
-  font-size: 1.1111111111111112em;
-  line-height: 1.35em;
-  margin-bottom: 1.35em;
-}
+
 p, ul, blockquote, pre, figcaption {
-  margin: 0 0 1.5em 0;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 1em; // equiv 16px
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
+
+h1,h2,h3,h4 {
+  line-height: 1.1;
+  margin: 41.887px 0 16px;
+}
+
+h1 {
+  font-size:  41.887px;
+}
+
+h2 {
+  font-size:  36.786px;
+}
+
+h3 {
+  font-size:  25.888px;
+}
+
+h4 {
+  font-size:  22.735px;
+}
+
 .small {
-  margin: 0 0 1.6875em 0;
-  font-size: 0.8888888888888888em;
-  line-height: 1.6875em;
+  font-size: 14.051px;
 }
+
 // Headings/small
 // ----------------------------------------
 
@@ -443,9 +450,9 @@ article {
 .link a {
   display: inline-block;
   margin: 0;
-  font-size: 1.4444444444444444em;
-  line-height: 1.0384615384615385em;
-  margin-bottom: 1.0384615384615385em;
+  font-size: 36.786px;
+  line-height: 1.1;
+  margin-bottom: 16px;
   border-bottom: 0;
 
   &:hover, &:active {
