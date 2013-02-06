@@ -1,7 +1,10 @@
-article {
-	background-color: $article-background;
+.post {
+	overflow: hidden; // force the article to contain the margins of its content http://reference.sitepoint.com/css/collapsingmargins
 	margin-top: $large-gutter;
 	margin-bottom: $large-gutter;
+	padding: 0 1em;
+
+	@include googie($article-background);
 
 	&:first-child {
 		margin-top: 0;
@@ -10,6 +13,16 @@ article {
 	&:last-of-type {
 		margin-bottom: 0;
 		border-bottom: 0;
+	}
+
+	.photo, .photoset, .link, .audio, .video, .question, .quote, .conversation {
+		&:first-child {
+			margin-top: 1em;
+		}
+	}
+
+	footer:last-child {
+		margin-bottom: 1em;
 	}
 }
 

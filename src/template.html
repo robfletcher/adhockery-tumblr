@@ -121,9 +121,9 @@
                     </ul>
                     {/block:Chat}
 
-                    {block:ContentSource}
-                    <footer class="content_source">
-                        <a href="{SourceURL}">
+                    <footer>
+                        {block:ContentSource}
+                        <a href="{SourceURL}" class="content-source">
                             {lang:Source}:
                             {block:SourceLogo}
                                 <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
@@ -132,10 +132,8 @@
                                 {SourceTitle}
                             {/block:NoSourceLogo}
                         </a>
-                    </footer>
-                    {/block:ContentSource}
+                        {/block:ContentSource}
 
-                    <footer class="post_info">
                         {block:IfShowTags}
                         {block:HasTags}
                         <ul class="tags">
@@ -148,21 +146,17 @@
 
                         {block:IfShowPostNotes}
                         {block:NoteCount}
-                        <div class="notecount">
-                            <a href="{Permalink}#notes">{NoteCount} notes</a>
-                        </div>
+                        <a href="{Permalink}#notes" class="note-count">{NoteCount} notes</a>
                         {/block:NoteCount}
                         {block:PostNotes}
-                        <section id="notes" class="post_notes">
-                          {PostNotes}
-                        </section>
+                        <section id="notes" class="post-notes">{PostNotes}</section>
                         {/block:PostNotes}
                         {/block:IfShowPostNotes}
 
                         {block:IfDisqusShortname}
                         {block:Permalink}
-                        <div id="disqus_thread"></div>
-                        <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+                        <div id="disqus-thread"></div>
+                        <script src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
                         <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
                         {/block:Permalink}
                         {/block:IfDisqusShortname}
