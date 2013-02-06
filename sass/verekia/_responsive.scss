@@ -16,10 +16,6 @@
     }
 }
 
-body {
-    font: #{$base-font-size}/#{$base-leading} $base-font-family;
-}
-
 // layout
 
 #site-header,
@@ -118,7 +114,7 @@ body {
 // Posts
 
 #posts {
-    padding: $large-gutter 0;
+    @include rhythm(0, 2, 2, 0);
 
     .sidebar {
         color: white;
@@ -134,7 +130,7 @@ body {
 
         .sidebar {
             position: absolute;
-            top: $large-gutter;
+            top: rhythm(2);
             right: 0;
             width: $sidebar-width;
         }

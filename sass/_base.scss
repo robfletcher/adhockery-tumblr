@@ -25,6 +25,7 @@ $page-width: 1 - (2 * $page-gutter) !default;
 $sidebar-width: 38% !default;
 
 @import "compass/css3";
+@import "compass/typography";
 @import "reset";
 @import "links";
 @import "h5bp/base";
