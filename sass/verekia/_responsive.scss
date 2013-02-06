@@ -1,25 +1,6 @@
 // Based on...
 // Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
 
-$base-font-family: Helvetica, "Helvetica Neue", Arial !default;
-$base-font-size: 16px !default;
-$base-leading: 26px !default;
-
-$breakpoint-intermediate: 480px;
-$breakpoint-wide: 768px;
-$breakpoint-maximal: 1140px;
-
-$theme-background: #f16529 !default;
-$theme-border: #e44d26 !default;
-
-$small-gutter: 20px !default;
-$large-gutter: 30px !default;
-
-$page-gutter: 0.05 !default;
-$page-width: 1 - (2 * $page-gutter) !default;
-
-$sidebar-width: 38%;
-
 @mixin respond-to($min-width) {
     @media only screen and (min-width: $min-width) {
         @content;
@@ -80,7 +61,7 @@ body {
 @include respond-to($breakpoint-wide) {
     .header-container,
     .sidebar {
-        @include box-shadow(0 5px 10px #aaa);
+        @include box-shadow(0 5px 10px $divider-color);
     }
 }
 

@@ -1,3 +1,24 @@
+$base-font-family: Helvetica, "Helvetica Neue", Arial !default;
+$base-font-size: 16px !default;
+$base-leading: 26px !default;
+
+$breakpoint-intermediate: 480px;
+$breakpoint-wide: 768px;
+$breakpoint-maximal: 1140px;
+
+$theme-background: #ec2400 !default;
+$theme-border: darken($theme-background, 10%) !default;
+$article-background: lighten(desaturate(complement($theme-background), 50%), 50%);
+$divider-color: #aaa !default;
+
+$small-gutter: 20px !default;
+$large-gutter: 30px !default;
+
+$page-gutter: 0.05 !default;
+$page-width: 1 - (2 * $page-gutter) !default;
+
+$sidebar-width: 38%;
+
 @import "compass/css3";
 @import "reset";
 @import "h5bp/base"; // html5 boilerplate base styles
