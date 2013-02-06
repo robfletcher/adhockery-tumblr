@@ -1,4 +1,4 @@
-$base-font-family: Helvetica, "Helvetica Neue", Arial !default;
+$base-font-family: Helvetica, 'Helvetica Neue', Arial !default;
 $base-font-size: 16px !default;
 $base-leading: 26px !default;
 
@@ -8,9 +8,9 @@ $breakpoint-maximal: 1140px;
 
 $banner-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
 $theme-background: #ec2400 !default;
-$theme-border: darken($theme-background, 10%) !default;
-$article-background: darken(white, 5%);
+$theme-border: transparentize(darken($theme-background, 20), 0.25) !default;
 $page-background: lighten(desaturate(complement($theme-background), 65), 35);
+$article-background: lighten(desaturate($page-background, 20), 12);
 $divider-color: #aaa !default;
 
 $small-gutter: 20px !default;
@@ -31,4 +31,5 @@ $sidebar-width: 38%;
 
 body {
 	background-color: $page-background;
+	background-image: inline-image('noise.png', 'image/png');
 }
