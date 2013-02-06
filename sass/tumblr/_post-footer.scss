@@ -18,3 +18,9 @@ ul.tags {
 		content: '#';
 	}
 }
+
+.content-source {
+	strong:after {
+		content: ':';
+	}
+}
