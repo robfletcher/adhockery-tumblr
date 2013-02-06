@@ -92,23 +92,6 @@ nav {
         width: $sidebar-width;
     }
 
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    li {
-        @include respond-to($breakpoint-intermediate) {
-            &:first-child a {
-                margin-left: 0;
-            }
-
-            &:last-child a {
-                margin-right: 0;
-            }
-        }
-    }
-
     a {
         display: block;
         margin-bottom: 10px;
@@ -136,6 +119,14 @@ nav {
             margin: 0 1.7%;
             padding: 25px 2%;
             margin-bottom: 0;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 

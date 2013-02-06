@@ -29,13 +29,11 @@
             <header id="site-header">
                 <h1 class="title">{Title}</h1>
                 <nav>
-                    <ul>
-                        {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
-                        {block:AskEnabled}<li><a href="/ask" class="ask">ask me anything</a></li>{/block:AskEnabled}
-                        {block:SubmissionsEnabled}<a href="/submit" class="submit">submit a post</a></li>{/block:SubmissionsEnabled}
-                        <li><a href="{RSS}" class="rss">Feed</a></li>
-                        <li><a href="/archive" class="archive">Archive</a></li>
-                    </ul>
+                    {block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}
+                    {block:AskEnabled}<a href="/ask" class="ask">ask me anything</a>{/block:AskEnabled}
+                    {block:SubmissionsEnabled}<a href="/submit" class="submit">submit a post</a>{/block:SubmissionsEnabled}
+                    <a href="{RSS}" class="rss">Feed</a>
+                    <a href="/archive" class="archive">Archive</a>
                 </nav>
             </header>
         </div>
