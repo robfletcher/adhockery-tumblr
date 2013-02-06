@@ -53,3 +53,9 @@ $post-type-selectors: ();
 		}
 	}
 }
+
+.content-source {
+	strong:after {
+		content: ':';
+	}
+}

@@ -123,15 +123,17 @@
 
                     <footer>
                         {block:ContentSource}
-                        <a href="{SourceURL}" class="content-source">
-                            {lang:Source}:
+                        <cite class="content-source">
+                            <strong>{lang:Source}</strong>
+                            <a href="{SourceURL}">
                             {block:SourceLogo}
                                 <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
                             {/block:SourceLogo}
                             {block:NoSourceLogo}
                                 {SourceTitle}
                             {/block:NoSourceLogo}
-                        </a>
+                            </a>
+                        </cite>
                         {/block:ContentSource}
 
                         {block:IfShowTags}
