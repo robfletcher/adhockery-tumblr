@@ -26,7 +26,7 @@
         <![endif]-->
 
         <div class="header-container">
-            <header>
+            <header id="site-header">
                 <h1 class="title">{Title}</h1>
                 <nav>
                     <ul>
@@ -41,10 +41,10 @@
         </div>
 
         <div class="main-container">
-            <div class="main">
+            <section id="posts">
 
                 {block:Posts}
-                <article>
+                <article class="post">
 
                     {block:Photo}
                     <figure class="photo">
@@ -194,16 +194,16 @@
                 </nav>
                 {/block:Pagination}
 
-                <aside>
+                <aside class="sidebar">
                     <h3>{Title}</h3>
                     {block:Description}<p>{Description}</p>{/block:Description}
                 </aside>
 
-            </div> <!-- #main -->
+            </section> <!-- #posts -->
         </div> <!-- #main-container -->
 
         <div class="footer-container">
-            <footer>
+            <footer id="site-footer">
                 {block:IfShowCopyrightInFooter}
                 <small class="copyright">&copy; {CopyrightYears} {Title}</small>
                 {/block:IfShowCopyrightInFooter}

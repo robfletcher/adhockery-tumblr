@@ -1,16 +1,24 @@
 // Based on...
 // Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
 
-$base-font-family: Helvetica, "Helvetica Neue", Arial;
-$base-font-size: 16px;
-$base-leading: 26px;
+$base-font-family: Helvetica, "Helvetica Neue", Arial !default;
+$base-font-size: 16px !default;
+$base-leading: 26px !default;
 
 $breakpoint-intermediate: 480px;
 $breakpoint-wide: 768px;
 $breakpoint-maximal: 1140px;
 
-$theme-background: #f16529;
-$theme-border: #e44d26;
+$theme-background: #f16529 !default;
+$theme-border: #e44d26 !default;
+
+$small-gutter: 20px !default;
+$large-gutter: 30px !default;
+
+$page-gutter: 0.05 !default;
+$page-width: 1 - (2 * $page-gutter) !default;
+
+$sidebar-width: 38%;
 
 @mixin respond-to($min-width) {
     @media only screen and (min-width: $min-width) {
@@ -19,47 +27,45 @@ $theme-border: #e44d26;
 }
 
 @mixin wrapper {
-    width: 90%;
-    margin: 0 5%;
+    width: percentage($page-width);
+    margin: 0 percentage($page-gutter);
     @include respond-to($breakpoint-maximal) {
-        width: $breakpoint-maximal * 0.9; // 1026px
+        width: $breakpoint-maximal * $page-width; // 1026px
         margin: 0 auto;
     }
 }
 
 body {
-    font-size: $base-font-size;
-    line-height: $base-leading;
-    font-family: $base-font-family;
+    font: #{base-font-size}/#{base-leading} $base-font-family;
 }
 
 // layout
 
-.header-container header,
-.main {
+#site-header,
+#posts {
     @include clearfix;
 }
 
-.header-container header,
-.main,
-.footer-container footer {
+#site-header,
+#posts,
+#site-footer {
     @include wrapper;
 }
 
 // Orange Theme
 
 .header-container {
-    border-bottom: 20px solid $theme-border;
+    border-bottom: $small-gutter solid $theme-border;
 }
 
 .footer-container,
-.main aside {
-    border-top: 20px solid $theme-border;
+.sidebar {
+    border-top: $small-gutter solid $theme-border;
 }
 
 .header-container,
 .footer-container,
-.main aside {
+.sidebar {
     background: $theme-background;
 }
 
@@ -73,7 +79,7 @@ body {
 
 @include respond-to($breakpoint-wide) {
     .header-container,
-    .main aside {
+    .sidebar {
         @include box-shadow(0 5px 10px #aaa);
     }
 }
@@ -83,7 +89,7 @@ body {
 nav {
     @include respond-to($breakpoint-wide) {
         float: right;
-        width: 38%;
+        width: $sidebar-width;
     }
 
     ul {
@@ -135,18 +141,18 @@ nav {
 
 }
 
-// Main
+// Posts
 
-.main {
-    padding: 30px 0;
+#posts {
+    padding: $large-gutter 0;
 
-    article {
+    .post {
         h1 {
             font-size: 2em;
         }
     }
 
-    aside {
+    .sidebar {
         color: white;
         padding: 0px 5% 10px;
     }
@@ -154,29 +160,29 @@ nav {
     @include respond-to($breakpoint-wide) {
         position: relative;
 
-        article {
-            width: 57%;
+        .post {
+            width: 100% - $sidebar-width - percentage($page-gutter);
         }
 
-        aside {
+        .sidebar {
             position: absolute;
-            top: 30px;
+            top: $large-gutter;
             right: 0;
-            width: 38%;
+            width: $sidebar-width;
         }
     }
 
 }
 
-.footer-container footer {
+#site-footer {
     color: white;
-    padding: 20px 0;
+    padding: $small-gutter 0;
 }
 
 // IE Fixes
 
 .ie7 .title {
-    padding-top: 20px;
+    padding-top: $small-gutter;
 }
 
 @include respond-to($breakpoint-intermediate) {
