@@ -1,0 +1,20 @@
+a, a:visited {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid $divider-color;
+	@include transition(all linear 0.1s);
+
+	&:hover, &:active, &:focus {
+		color: black;
+		border-bottom-width: 3px;
+		border-bottom-color: $link-highlight-color;
+	}
+}
+
+a[rel~=tag]:before {
+  content: '#';
+}
+
+#site-nav a {
+	border-bottom: 0;
+}

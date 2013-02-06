@@ -7,11 +7,14 @@ $breakpoint-wide: 768px;
 $breakpoint-maximal: 1140px;
 
 $banner-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
+
 $theme-background: #ec2400 !default;
 $theme-border: transparentize(darken($theme-background, 20), 0.25) !default;
 $page-background: lighten(desaturate(complement($theme-background), 65), 35);
 $article-background: lighten(desaturate($page-background, 20), 12);
 $divider-color: #aaa !default;
+$text-color: #333 !default;
+$link-highlight-color: darken($theme-background, 10);
 
 $small-gutter: 20px !default;
 $large-gutter: 30px !default;
@@ -19,10 +22,11 @@ $large-gutter: 30px !default;
 $page-gutter: 0.05 !default;
 $page-width: 1 - (2 * $page-gutter) !default;
 
-$sidebar-width: 38%;
+$sidebar-width: 38% !default;
 
 @import "compass/css3";
 @import "reset";
+@import "links";
 @import "h5bp/base";
 @import "h5bp/helpers";
 @import "verekia/responsive";
@@ -34,4 +38,5 @@ $sidebar-width: 38%;
 body {
 	background-color: $page-background;
 	background-image: inline-image('noise.png', 'image/png');
+	color: $text-color;
 }
