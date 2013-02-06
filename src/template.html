@@ -68,22 +68,24 @@
                     {/block:Link}
 
                     {block:Audio}
-                    <div class="audio">{AudioPlayerBlack}</div>
+                    <figure class="audio">{AudioPlayerBlack}>
                     {block:Caption}
-                        {Caption}
+                        <figcaption>{Caption}</figcaption>
                     {/block:Caption}
+                    </figure>
                     {/block:Audio}
 
                     {block:Video}
-                    <div class="video">{Video-700}</div>
+                    <figure class="video">{Video-700}
                     {block:Caption}
-                        {Caption}
+                        <figcaption>{Caption}</figcaption>
                     {/block:Caption}
+                    </figure>
                     {/block:Video}
 
                     {block:Text}
-                    {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
-                    {Body}
+                    {block:Title}<header><h1><a href="{Permalink}">{Title}</a></h1></header>{/block:Title}
+                    <section class="post-body">{Body}</section>
                     {/block:Text}
 
                     {block:Answer}
@@ -108,7 +110,7 @@
                     {/block:Quote}
 
                     {block:Chat}
-                    {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+                    {block:Title}<header><h1><a href="{Permalink}">{Title}</a></h1></header>{/block:Title}
                     <ul class="conversation">
                         {block:Lines}
                             <li class="chat_line user{UserNumber}">

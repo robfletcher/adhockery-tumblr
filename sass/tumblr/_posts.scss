@@ -1,15 +1,7 @@
-// turn a list into a comma separated selector - https://gist.github.com/metaskills/3170386
-$post-types: photo, photoset, link, audio, video, question, quote, conversation;
-$post-type-selectors: ();
-@each $type in $post-types {
-	$post-type-selectors: append($post-type-selectors, unquote('.#{$type}'), comma);
-}
-
 .post {
 	overflow: hidden; // force the article to contain the margins of its content http://reference.sitepoint.com/css/collapsingmargins
 	margin-top: $large-gutter;
 	margin-bottom: $large-gutter;
-	padding: 0 1em;
 
 	@include googie($article-background);
 
@@ -22,9 +14,17 @@ $post-type-selectors: ();
 		border-bottom: 0;
 	}
 
-	#{$post-type-selectors} {
+	header, .post-body, figure, ul.conversation {
+		margin-left: 1em;
+		margin-right: 1em;
+
 		&:first-child {
 			margin-top: 1em;
+		}
+
+		// probably never the case
+		&:last-child {
+			margin-bottom: 1em;
 		}
 	}
 
@@ -32,18 +32,16 @@ $post-type-selectors: ();
 		font-size: 2em;
 	}
 
-	footer:last-child {
-		margin-bottom: 1em;
-	}
+	.post-body {
+		ul {
+			padding-left: $large-gutter;
+		}
 
-	ul {
-		padding-left: $large-gutter;
-	}
-
-	blockquote {
-		margin-left: 0;
-		border-left: 3px solid $divider-color;
-		padding-left: $large-gutter - 3px;
+		blockquote {
+			margin-left: 0;
+			border-left: 3px solid $divider-color;
+			padding-left: $large-gutter - 3px;
+		}
 	}
 }
 

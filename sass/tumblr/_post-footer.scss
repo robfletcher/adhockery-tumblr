@@ -1,6 +1,20 @@
-.posted-at {
+.post footer {
+	padding: 1em;
+	margin-top: 1em;
+	background-color: darkgray;
+}
+
+.posted-at, .tags, .content-source {
 	display: block;
 	margin: 1em 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 ul.tags {
