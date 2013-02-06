@@ -6,9 +6,11 @@ $breakpoint-intermediate: 480px;
 $breakpoint-wide: 768px;
 $breakpoint-maximal: 1140px;
 
+$banner-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
 $theme-background: #ec2400 !default;
 $theme-border: darken($theme-background, 10%) !default;
-$article-background: lighten(desaturate(complement($theme-background), 50%), 50%);
+$article-background: darken(white, 5%);
+$page-background: lighten(desaturate(complement($theme-background), 65), 35);
 $divider-color: #aaa !default;
 
 $small-gutter: 20px !default;
@@ -27,3 +29,6 @@ $sidebar-width: 38%;
 @import "tumblr/posts";   // tumblr post styles
 @import "h5bp/print";   // print overrides
 
+body {
+	background-color: $page-background;
+}

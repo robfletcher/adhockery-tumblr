@@ -36,6 +36,8 @@ body {
 // Orange Theme
 
 .header-container {
+    background-image: $banner-image;
+    background-size: initial;
     border-bottom: $small-gutter solid $theme-border;
 }
 
@@ -47,7 +49,7 @@ body {
 .header-container,
 .footer-container,
 .sidebar {
-    background: $theme-background;
+    background-color: $theme-background;
 }
 
 .title {
@@ -58,9 +60,9 @@ body {
     }
 }
 
-@include respond-to($breakpoint-wide) {
-    .header-container,
-    .sidebar {
+.header-container,
+.sidebar {
+    @include respond-to($breakpoint-wide) {
         @include box-shadow(0 5px 10px $divider-color);
     }
 }
