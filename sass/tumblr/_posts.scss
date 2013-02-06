@@ -54,6 +54,35 @@ $post-type-selectors: ();
 	}
 }
 
+.quote {
+	blockquote {
+		font-size: 2em;
+		line-height: 1.1;
+		position: relative;
+
+		&:before, &:after {
+			font-size: 2em;
+			line-height: 1;
+			position: absolute;
+			top: 0;
+		}
+
+		&:before {
+			content: '\201c';
+			left: -32px;
+		}
+
+		&:after {
+			content: '\201d';
+			right: -32px;
+		}
+	}
+
+	figcaption:before {
+		content: '\2014\a0';
+	}
+}
+
 .content-source {
 	strong:after {
 		content: ':';
