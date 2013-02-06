@@ -5,6 +5,7 @@ module.exports = (grunt) ->
       dist:
         src: 'sass'
         dest: 'css'
+        outputstyle: 'compact'
         linecomments: false
     combine:
       dist:
