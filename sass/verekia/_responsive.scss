@@ -86,7 +86,7 @@ body {
 
 // Menu
 
-nav {
+#site-nav {
     @include respond-to($breakpoint-wide) {
         float: right;
         width: $sidebar-width;
@@ -177,11 +177,7 @@ nav {
 }
 
 @include respond-to($breakpoint-intermediate) {
-    nav ul li {
-        display: inline;
-    }
-
-    .oldie nav a {
+    .oldie #site-nav a {
         margin: 0 0.7%;
     }
 }
