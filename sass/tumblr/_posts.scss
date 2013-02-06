@@ -95,16 +95,45 @@
 	}
 }
 
+@mixin border-arrow($tail-width: 9px, $arrowhead-size: 35px, $inactive-color: $divider-color, $active-color: $link-highlight-color) {
+	position: relative;
+	display: block;
+	margin-right: $arrowhead-size;
+	border-bottom-width: $tail-width;
+	border-bottom-style: dotted;
+
+	&:after {
+		content: '';
+
+		width: 0;
+		height: 0;
+
+		position: absolute;
+		right: ($arrowhead-size * -1) + ($tail-width / 2);
+		bottom: (($tail-width / 2) + ($arrowhead-size / 2)) * -1;
+
+		border: $arrowhead-size / 2 solid transparent;
+		border-left-color: $inactive-color;
+
+		@include single-transition(all, 0.1s, linear, 0);
+	}
+
+	&:hover, &:active, &:focus {
+		border-bottom-width: $tail-width;
+
+		&:after {
+			border-left-color: $active-color;
+		}
+	}
+}
+
 .link {
 	h1 {
 		@include adjust-font-size-to(24px);
 		@include rhythm(1, 0, 0, 1, 24px);
 
-		&:after {
-			content: '\21e2';
-			font-size: 3em;
-			color: $divider-color;
-			vertical-align: middle;
+		a, a:visited {
+			@include border-arrow;
 		}
 	}
 }
