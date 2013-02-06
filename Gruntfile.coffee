@@ -1,10 +1,11 @@
 module.exports = (grunt) ->
 
   grunt.initConfig
-    less:
+    compass:
       dist:
-        files:
-          'css/theme.css': 'less/theme.less'
+        src: 'sass'
+        dest: 'css'
+        linecomments: false
     combine:
       dist:
         input: 'src/template.html'
@@ -14,14 +15,14 @@ module.exports = (grunt) ->
           file: 'css/theme.css'
         ]
     watch:
-      less:
-        files: ['less/*.*']
-        tasks: ['less']
+      compass:
+        files: ['sass/**/*.{scss,sass}']
+        tasks: 'compass'
       combine:
-      	files: ['src/template.html', 'css/theme.css']
-      	tasks: ['combine']
+      	files: ['src/*', 'css/*']
+      	tasks: 'combine'
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-compass'
   grunt.loadNpmTasks 'grunt-combine'
-  grunt.registerTask 'default', ['less', 'combine']
+  grunt.registerTask 'default', ['compass', 'combine']

@@ -1,0 +1,190 @@
+// Based on...
+// Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+
+$base-font-family: Helvetica, "Helvetica Neue", Arial;
+$base-font-size: 16px;
+$base-leading: 26px;
+
+$breakpoint-intermediate: 480px;
+$breakpoint-wide: 768px;
+$breakpoint-maximal: 1140px;
+
+$theme-background: #f16529;
+$theme-border: #e44d26;
+
+@mixin respond-to($min-width) {
+    @media only screen and (min-width: $min-width) {
+        @content;
+    }
+}
+
+@mixin wrapper {
+    width: 90%;
+    margin: 0 5%;
+    @include respond-to($breakpoint-maximal) {
+        width: $breakpoint-maximal * 0.9; // 1026px
+        margin: 0 auto;
+    }
+}
+
+body {
+    font-size: $base-font-size;
+    line-height: $base-leading;
+    font-family: $base-font-family;
+}
+
+// layout
+
+.header-container header,
+.main {
+    @include clearfix;
+}
+
+.header-container header,
+.main,
+.footer-container footer {
+    @include wrapper;
+}
+
+// Orange Theme
+
+.header-container {
+    border-bottom: 20px solid $theme-border;
+}
+
+.footer-container,
+.main aside {
+    border-top: 20px solid $theme-border;
+}
+
+.header-container,
+.footer-container,
+.main aside {
+    background: $theme-background;
+}
+
+.title {
+    color: white;
+
+    @include respond-to($breakpoint-wide) {
+        float: left;
+    }
+}
+
+@include respond-to($breakpoint-wide) {
+    .header-container,
+    .main aside {
+        @include box-shadow(0 5px 10px #aaa);
+    }
+}
+
+// Menu
+
+nav {
+    @include respond-to($breakpoint-wide) {
+        float: right;
+        width: 38%;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        @include respond-to($breakpoint-intermediate) {
+            &:first-child a {
+                margin-left: 0;
+            }
+
+            &:last-child a {
+                margin-right: 0;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        margin-bottom: 10px;
+        padding: 15px 0;
+
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+
+        color: white;
+        background: $theme-border;
+
+        &:hover,
+        &:visited {
+            color: white;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include respond-to($breakpoint-intermediate) {
+            float: left;
+            width: 31%;
+            margin: 0 1.7%;
+            padding: 25px 2%;
+            margin-bottom: 0;
+        }
+    }
+
+}
+
+// Main
+
+.main {
+    padding: 30px 0;
+
+    article {
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    aside {
+        color: white;
+        padding: 0px 5% 10px;
+    }
+
+    @include respond-to($breakpoint-wide) {
+        position: relative;
+
+        article {
+            width: 57%;
+        }
+
+        aside {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            width: 38%;
+        }
+    }
+
+}
+
+.footer-container footer {
+    color: white;
+    padding: 20px 0;
+}
+
+// IE Fixes
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+@include respond-to($breakpoint-intermediate) {
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
