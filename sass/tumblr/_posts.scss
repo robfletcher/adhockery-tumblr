@@ -28,6 +28,10 @@ $post-type-selectors: ();
 		}
 	}
 
+	h1 {
+		font-size: 2em;
+	}
+
 	footer:last-child {
 		margin-bottom: 1em;
 	}
@@ -93,5 +97,18 @@ $post-type-selectors: ();
 
 	figcaption:before {
 		content: '\2014\a0';
+	}
+}
+
+.link {
+	h1 {
+		font-size: 1.5em;
+
+		&:after {
+			content: '\21e2';
+			font-size: 3em;
+			color: $divider-color;
+			vertical-align: middle;
+		}
 	}
 }
