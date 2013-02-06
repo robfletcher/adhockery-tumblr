@@ -1,3 +1,10 @@
+// turn a list into a comma separated selector - https://gist.github.com/metaskills/3170386
+$post-types: photo, photoset, link, audio, video, question, quote, conversation;
+$post-type-selectors: ();
+@each $type in $post-types {
+	$post-type-selectors: append($post-type-selectors, unquote('.#{$type}'), comma);
+}
+
 .post {
 	overflow: hidden; // force the article to contain the margins of its content http://reference.sitepoint.com/css/collapsingmargins
 	margin-top: $large-gutter;
@@ -15,7 +22,7 @@
 		border-bottom: 0;
 	}
 
-	.photo, .photoset, .link, .audio, .video, .question, .quote, .conversation {
+	#{$post-type-selectors} {
 		&:first-child {
 			margin-top: 1em;
 		}
