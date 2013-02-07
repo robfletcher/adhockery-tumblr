@@ -1,5 +1,7 @@
 .post {
-	overflow: hidden; // force the article to contain the margins of its content http://reference.sitepoint.com/css/collapsingmargins
+	// force the article to contain the margins of its content http://reference.sitepoint.com/css/collapsingmargins
+	overflow: hidden;
+
 	margin-top: rhythm(2);
 	margin-bottom: rhythm(2);
 
