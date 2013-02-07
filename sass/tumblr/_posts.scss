@@ -66,27 +66,20 @@
 		@include adjust-font-size-to(32px);
 		@include adjust-leading-to(2/3);
 		@include rhythm(1, 0, 0, 1, 32px);
-		margin-left: $large-gutter;
-		margin-right: $large-gutter;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 2.5em;
 		border-left: 0;
-		padding-left: 0;
 		position: relative;
-
-		&:before, &:after {
-			font-size: 2em;
-			line-height: 1;
-			position: absolute;
-			top: 0;
-		}
 
 		&:before {
 			content: '\201c';
-			left: -32px;
-		}
-
-		&:after {
-			content: '\201d';
-			right: -32px;
+			color: $divider-color;
+			font-size: 5em;
+			line-height: 1;
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
 
