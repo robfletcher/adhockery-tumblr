@@ -51,6 +51,9 @@
 .title {
     color: white;
 
+    @include adjust-font-size-to(38px);
+    @include rhythm(1, 0, 0, 1, 38px);
+
     @include respond-to($breakpoint-wide) {
         float: left;
     }
@@ -65,16 +68,22 @@
 
 // Menu
 
+#site-header {
+    position: relative;
+}
+
 #site-nav {
     @include respond-to($breakpoint-wide) {
-        float: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
         width: $sidebar-width;
     }
 
     a {
         display: block;
-        margin-bottom: 10px;
-        padding: 15px 0;
+
+        @include rhythm(1, 1.5, 1.5, 1);
 
         text-align: center;
         text-decoration: none;
@@ -96,7 +105,7 @@
             float: left;
             width: 31%;
             margin: 0 1.7%;
-            padding: 25px 2%;
+            padding: rhythm(1) 2%;
             margin-bottom: 0;
 
             &:first-child {
