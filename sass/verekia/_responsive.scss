@@ -61,7 +61,8 @@
 }
 
 .header-container,
-.sidebar {
+.sidebar,
+.post {
     @include respond-to($breakpoint-wide) {
         @include box-shadow(0 5px 10px $shadow-color);
     }
