@@ -7,7 +7,7 @@
 	color: $post-footer-text;
 
 	a {
-		@include link-colors($post-footer-link-text, $post-footer-link-border, $post-footer-link-highlight-text, $post-footer-link-highlight-border);
+		@include link-colors($post-footer-link-text, $post-footer-link-highlight-text, $post-footer-link-border, $post-footer-link-highlight-border);
 	}
 }
 

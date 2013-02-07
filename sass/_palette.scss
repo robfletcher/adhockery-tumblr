@@ -19,9 +19,11 @@ $link-highlight-border: $red;
 $header-background: $black;
 $header-text: $white;
 $header-border: $red;
+$header-link-text: $yellow;
+$header-link-highlight-text: white;
 
 $footer-background: $black;
-$footer-text: $white;
+$footer-text: $yellow;
 $footer-border: $red;
 
 $post-body-background: $white;
@@ -35,7 +37,7 @@ $post-footer-link-highlight-text: $yellow;
 $post-footer-link-highlight-border: $yellow;
 
 $sidebar-background: $black;
-$sidebar-text: $white;
+$sidebar-text: $yellow;
 $sidebar-border: $red;
 
 $shadow-color: transparentize($black, 0.5) !default;

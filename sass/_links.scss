@@ -1,4 +1,4 @@
-@mixin link-colors($inactive-color, $inactive-border, $active-color, $active-border) {
+@mixin link-colors($inactive-color: $link-text, $active-color: $link-highlight-text, $inactive-border: $link-border, $active-border: $link-highlight-border) {
 	&, &:visited {
 		color: $inactive-color;
 		border-color: $inactive-border;
@@ -10,7 +10,7 @@
 }
 
 a {
-	@include link-colors($link-text, $link-border, $link-highlight-text, $link-highlight-border);
+	@include link-colors;
 	text-decoration: none;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;

@@ -91,13 +91,8 @@
         text-decoration: none;
         font-weight: bold;
 
-        color: $header-text;
         background-color: $header-border;
-
-        &:hover,
-        &:visited {
-            color: inherit;
-        }
+        @include link-colors($header-link-text, $header-link-highlight-text);
 
         @include respond-to($breakpoint-intermediate) {
             float: left;
