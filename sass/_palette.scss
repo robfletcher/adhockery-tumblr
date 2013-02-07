@@ -1,0 +1,38 @@
+// color palette
+$black: #222;
+$red: #99383a;
+$yellow: #e0b684;
+$brown: #ac826a;
+$blue: #6f7d91;
+$gray: #c0c0c0;
+$white: #e0e0e0;
+
+// palette applied to elements
+$body-background: $blue;
+$body-text: $black;
+
+$link-text: inherit;
+$link-border: $gray;
+$link-highlight-text: black;
+$link-highlight-border: $red;
+
+$header-background: $black;
+$header-text: $white;
+$header-border: $red;
+
+$footer-background: $black;
+$footer-text: $white;
+$footer-border: $red;
+
+$post-body-background: $white;
+$post-body-text: $black;
+
+$post-footer-background: $black;
+$post-footer-text: $white;
+
+$sidebar-background: $black;
+$sidebar-text: $white;
+$sidebar-border: $red;
+
+$shadow-color: transparentize($black, 0.5) !default;
+$border-color: $gray;

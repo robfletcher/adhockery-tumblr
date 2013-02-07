@@ -8,14 +8,6 @@ $breakpoint-maximal: 1140px;
 
 $banner-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
 
-$theme-background: #ec2400 !default;
-$theme-border: transparentize(darken($theme-background, 20), 0.25) !default;
-$page-background: lighten(desaturate(complement($theme-background), 65), 35);
-$article-background: lighten(desaturate($page-background, 20), 12);
-$divider-color: #aaa !default;
-$text-color: #333 !default;
-$link-highlight-color: darken($theme-background, 10);
-
 $small-gutter: 20px !default;
 $large-gutter: 30px !default;
 
@@ -24,20 +16,24 @@ $page-width: 1 - (2 * $page-gutter) !default;
 
 $sidebar-width: 38% !default;
 
+// compass components
 @import "compass/css3";
 @import "compass/typography";
-@import "reset";
-@import "links";
+
+// html5 boilerplate
 @import "h5bp/base";
 @import "h5bp/helpers";
-@import "verekia/responsive";
+
+// theme styles
+@import "reset";
 @import "googie";
+@import "palette";
+@import "body";
+@import "links";
+@import "lists";
+@import "verekia/responsive";
 @import "tumblr/posts";
 @import "tumblr/post-footer";
-@import "h5bp/print";
 
-body {
-	background-color: $page-background;
-	background-image: inline-image('noise.png', 'image/png');
-	color: $text-color;
-}
+// print only
+@import "h5bp/print";

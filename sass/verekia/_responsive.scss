@@ -32,25 +32,26 @@
 // Orange Theme
 
 .header-container {
-    background-image: $banner-image;
-    background-size: initial;
-    border-bottom: $small-gutter solid $theme-border;
+    // background-image: $banner-image;
+    // background-size: initial;
+    background-color: $header-background;
+    border-bottom: $small-gutter solid $header-border;
 }
 
-.footer-container,
-.sidebar {
-    border-top: $small-gutter solid $theme-border;
+.footer-container {
+    background-color: $footer-background;
+    border-top: $small-gutter solid $footer-border;
+    color: $footer-text;
 }
 
-.header-container,
-.footer-container,
 .sidebar {
-    background-color: $theme-background;
+    background-color: $sidebar-background;
+    border-top: $small-gutter solid $sidebar-border;
+    color: $sidebar-text;
 }
 
 .title {
-    color: white;
-
+    color: $header-text;
     @include adjust-font-size-to(38px);
     @include rhythm(1, 0, 0, 1, 38px);
 
@@ -62,7 +63,7 @@
 .header-container,
 .sidebar {
     @include respond-to($breakpoint-wide) {
-        @include box-shadow(0 5px 10px $divider-color);
+        @include box-shadow(0 5px 10px $shadow-color);
     }
 }
 
@@ -89,16 +90,12 @@
         text-decoration: none;
         font-weight: bold;
 
-        color: white;
-        background: $theme-border;
+        color: $header-text;
+        background-color: $header-border;
 
         &:hover,
         &:visited {
-            color: white;
-        }
-
-        &:hover {
-            text-decoration: underline;
+            color: inherit;
         }
 
         @include respond-to($breakpoint-intermediate) {
@@ -126,7 +123,6 @@
     @include rhythm(0, 2, 2, 0);
 
     .sidebar {
-        color: white;
         padding: 0px 5% 10px;
     }
 
@@ -148,7 +144,6 @@
 }
 
 #site-footer {
-    color: white;
     padding: $small-gutter 0;
 }
 

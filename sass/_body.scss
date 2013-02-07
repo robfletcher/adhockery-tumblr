@@ -1,0 +1,5 @@
+body {
+	background-color: $body-background;
+	background-image: inline-image('noise.png', 'image/png');
+	color: $body-text;
+}

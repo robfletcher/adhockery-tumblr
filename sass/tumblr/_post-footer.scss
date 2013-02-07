@@ -3,7 +3,8 @@
 	@include rhythm(1, 1, 1, 0);
 	padding-left: rhythm(1);
 	padding-right: rhythm(1);
-	background-color: darkgray;
+	background-color: $post-footer-background;
+	color: $post-footer-text;
 }
 
 .posted-at, .tags, .content-source {
