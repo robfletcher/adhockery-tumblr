@@ -20,7 +20,25 @@
 }
 
 ul.tags {
-	@include delimited-list;
+	// not using Compass' delimited-list mixin as it removes margins from the ul itself
+	list-style-type: none;
+	padding-left: 0;
+	li {
+		display: inline;
+    	&:after {
+    		content: ', ';
+    	}
+    	&:last-child {
+      		&:after {
+        		content: '';
+        	}
+        }
+    	&.last {
+      		&:after {
+        		content: '';
+        	}
+        }
+    }
 }
 
 .content-source {
