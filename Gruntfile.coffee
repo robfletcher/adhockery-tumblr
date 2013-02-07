@@ -1,6 +1,7 @@
 module.exports = (grunt) ->
 
   grunt.initConfig
+
     compass:
       dist:
         src: 'sass'
@@ -8,6 +9,7 @@ module.exports = (grunt) ->
         images: 'images'
         outputstyle: 'compact'
         linecomments: false
+
     combine:
       dist:
         input: 'src/template.html'
@@ -16,6 +18,7 @@ module.exports = (grunt) ->
           token: '{{css}}'
           file: 'css/theme.css'
         ]
+
     watch:
       compass:
         files: ['sass/**/*.{scss,sass}']
