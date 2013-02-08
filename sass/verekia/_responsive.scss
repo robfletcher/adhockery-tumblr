@@ -151,8 +151,7 @@ $section-border-width: 20px !default;
             float: left;
             width: 31%;
             margin: 0 1.7%;
-            padding-left: 2%;
-            padding-right: 2%;
+            padding: rhythm(0.5, 20px) 2%;
             margin-bottom: 0;
 
             &:first-child {
