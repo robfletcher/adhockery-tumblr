@@ -48,6 +48,7 @@
 
     strong {
         display: block;
+        @include adjust-font-size-to(20px);
         color: $sidebar-heading;
     }
 
