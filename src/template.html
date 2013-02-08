@@ -192,7 +192,11 @@
                 {/block:Pagination}
 
                 <aside class="sidebar">
-                    {block:Description}<p>{Description}</p>{/block:Description}
+                    {block:Description}
+                    <p>
+                        <img class="avatar" src="{PortraitURL-64}">{Description}
+                    </p>
+                    {/block:Description}
                 </aside>
 
             </section> <!-- #posts -->

@@ -66,6 +66,11 @@ $section-border-width: 20px !default;
         }
     }
 
+    .avatar {
+        float: left;
+        margin: 0.25em 1em 0.25em 0;
+    }
+
     strong {
         display: block;
         @include adjust-font-size-to(20px);
