@@ -48,6 +48,26 @@
     background-color: $sidebar-background;
     border-top: $small-gutter solid $sidebar-border;
     color: $sidebar-text;
+
+    a {
+        @include link-colors($sidebar-link-text, $sidebar-link-highlight-text, $sidebar-link-border, $sidebar-link-highlight-border);
+    }
+
+    strong {
+        display: block;
+        color: $sidebar-heading;
+    }
+
+    cite {
+        display: block;
+        @include adjust-font-size-to(14px);
+        &:before {
+            content: '[';
+        }
+        &:after {
+            content: ']';
+        }
+    }
 }
 
 .title {

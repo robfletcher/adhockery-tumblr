@@ -26,19 +26,24 @@ $footer-background: $black;
 $footer-text: $yellow;
 $footer-border: $red;
 
+$sidebar-background: $black;
+$sidebar-text: $blue;
+$sidebar-heading: $yellow;
+$sidebar-border: $red;
+$sidebar-link-text: $blue;
+$sidebar-link-highlight-text: $white;
+$sidebar-link-border: darken($blue, 25%);
+$sidebar-link-highlight-border: $red;
+
 $post-body-background: $white;
 $post-body-text: $black;
 
 $post-footer-background: $black;
-$post-footer-text: $brown;
+$post-footer-text: $blue;
 $post-footer-link-text: inherit;
-$post-footer-link-border: $brown;
-$post-footer-link-highlight-text: $yellow;
-$post-footer-link-highlight-border: $yellow;
-
-$sidebar-background: $black;
-$sidebar-text: $yellow;
-$sidebar-border: $red;
+$post-footer-link-border: darken($blue, 25%);
+$post-footer-link-highlight-text: $white;
+$post-footer-link-highlight-border: $red;
 
 $shadow-color: transparentize($black, 0.5) !default;
 $border-color: $gray;
