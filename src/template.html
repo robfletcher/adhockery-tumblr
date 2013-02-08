@@ -28,11 +28,8 @@
 
         <div class="header-container">
             <header id="site-header">
-                <h1 class="title">{Title}</h1>
+                <h1 class="title"><a href="/">{Title}</a></h1>
                 <nav id="site-nav">
-                    {block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}
-                    {block:AskEnabled}<a href="/ask" class="ask">ask me anything</a>{/block:AskEnabled}
-                    {block:SubmissionsEnabled}<a href="/submit" class="submit">submit a post</a>{/block:SubmissionsEnabled}
                     <a href="{RSS}" class="rss">Feed</a>
                     <a href="/archive" class="archive">Archive</a>
                 </nav>

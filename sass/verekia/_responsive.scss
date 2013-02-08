@@ -77,6 +77,11 @@ $section-border-width: 20px !default;
     @include respond-to($breakpoint-wide) {
         float: left;
     }
+
+    a, a:visited, a:hover, a:active, a:focus {
+        color: inherit;
+        border-bottom: 0;
+    }
 }
 
 .header-container,
