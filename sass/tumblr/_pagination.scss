@@ -1,9 +1,3 @@
-$pagination-link-background: $black;
-$pagination-link-highlight-background: $red;
-$pagination-link-text: $brown;
-$pagination-link-highlight-text: $yellow;
-$pagination-disabled-text: $gray;
-
 @mixin circle($diameter) {
 	width: $diameter;
 	height: $diameter;

@@ -45,5 +45,11 @@ $post-footer-link-border: darken($blue, 25%);
 $post-footer-link-highlight-text: $white;
 $post-footer-link-highlight-border: $red;
 
+$pagination-link-background: $black;
+$pagination-link-highlight-background: $red;
+$pagination-link-text: $brown;
+$pagination-link-highlight-text: $yellow;
+$pagination-disabled-text: $gray;
+
 $shadow-color: transparentize($black, 0.5) !default;
 $border-color: $gray;
