@@ -23,8 +23,7 @@
 	}
 
 	header h1 {
-		@include adjust-font-size-to(32px);
-		@include rhythm(1, 0, 0, 1, 32px);
+		@include header-font(40px);
 	}
 
 	.post-body {
@@ -128,8 +127,7 @@
 
 .link {
 	h1 {
-		@include adjust-font-size-to(24px);
-		@include rhythm(1, 0, 0, 1, 24px);
+		@include header-font(32px);
 
 		a, a:visited {
 			@include border-arrow;

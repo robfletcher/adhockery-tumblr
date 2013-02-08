@@ -1,0 +1,9 @@
+$base-font: Georgia, Times, "Times New Roman", serif !default;
+$header-font: 'Maiden Orange', sans-serif !default;
+
+@mixin header-font($size) {
+	font-family: $header-font;
+    @include adjust-font-size-to($size);
+    @include rhythm(1, 0, 0, 0.5, $size);
+    // todo: add fallback with even rhythm and smaller font size for `.no-webfonts &`
+}

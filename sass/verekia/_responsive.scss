@@ -64,9 +64,9 @@
 }
 
 .title {
+    @include header-font(48px);
+    text-transform: uppercase;
     color: $header-text;
-    @include adjust-font-size-to(38px);
-    @include rhythm(1, 0, 0, 1, 38px);
 
     @include respond-to($breakpoint-wide) {
         float: left;
