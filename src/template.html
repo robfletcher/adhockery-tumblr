@@ -139,7 +139,7 @@
                         </cite>
                         {/block:ContentSource}
 
-                        {block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}" class="posted-at">{TimeAgo}</time>{/block:Date}
+                        {block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}" class="posted-at">{DayOfMonth}<sup>{DayOfMonthSuffix}</sup> {ShortMonth} {Year}</time>{/block:Date}
 
                         {block:IfShowTags}
                         {block:HasTags}
