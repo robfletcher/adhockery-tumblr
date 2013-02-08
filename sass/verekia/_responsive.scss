@@ -98,7 +98,9 @@
     a {
         display: block;
 
-        @include rhythm(1, 1.5, 1.5, 1);
+        font-family: $accent-font;
+        @include adjust-font-size-to(20px);
+        @include rhythm(1, 1, 1, 1, 20px);
 
         text-align: center;
         text-decoration: none;
@@ -111,7 +113,8 @@
             float: left;
             width: 31%;
             margin: 0 1.7%;
-            padding: rhythm(1) 2%;
+            padding-left: 2%;
+            padding-right: 2%;
             margin-bottom: 0;
 
             &:first-child {

@@ -1,5 +1,6 @@
 $base-font: Georgia, Times, "Times New Roman", serif !default;
 $header-font: 'Maiden Orange', sans-serif !default;
+$accent-font: 'Kaushan Script', cursive !default;
 
 @mixin header-font($size) {
 	font-family: $header-font;

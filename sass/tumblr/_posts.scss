@@ -68,6 +68,7 @@
 
 .quote {
 	blockquote {
+		font-family: $accent-font;
 		@include adjust-font-size-to(32px);
 		@include adjust-leading-to(2/3);
 		@include rhythm(1, 0, 0, 1, 32px);
@@ -79,6 +80,7 @@
 
 		&:before {
 			content: '\201c';
+			font-family: $base-font;
 			color: $border-color;
 			font-size: 5em;
 			line-height: 0.75;
