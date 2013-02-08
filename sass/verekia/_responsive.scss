@@ -1,11 +1,4 @@
-// Based on...
-// Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-
-@mixin respond-to($min-width) {
-    @media only screen and (min-width: $min-width) {
-        @content;
-    }
-}
+// Based on: http://verekia.com/initializr/responsive-template
 
 @mixin wrapper {
     width: percentage($page-width);

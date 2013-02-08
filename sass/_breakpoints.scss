@@ -1,0 +1,9 @@
+$breakpoint-intermediate: 480px;
+$breakpoint-wide: 768px;
+$breakpoint-maximal: 1140px;
+
+@mixin respond-to($min-width) {
+    @media only screen and (min-width: $min-width) {
+        @content;
+    }
+}
