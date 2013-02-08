@@ -26,31 +26,42 @@
 		@include header-font(40px);
 	}
 
-	.post-body {
-		> * {
-			@include rhythm(1, 0, 0, 1);
-		}
-
-		$list-and-bq-indent: 30px;
-
-		ul {
-			padding-left: $list-and-bq-indent;
-		}
-
-		li {
-			@include colored-bullets($border-color);
-		}
-
-		blockquote {
-			$border-width: 3px;
-			margin-left: 0;
-			border-left: $border-width solid $border-color;
-			padding-left: $list-and-bq-indent - $border-width;
-		}
-	}
-
 	figcaption {
 		@include rhythm(1, 0, 0, 1);
+	}
+
+	a {
+        @include inactive-link {
+            color: $link-text;
+            border-bottom: 1px solid $link-border;
+        }
+        @include active-link {
+            color: $link-highlight-text;
+            border-bottom: 3px solid $link-highlight-border;
+        }
+	}
+}
+
+.post-body {
+	> * {
+		@include rhythm(1, 0, 0, 1);
+	}
+
+	$list-and-bq-indent: 30px;
+
+	ul {
+		padding-left: $list-and-bq-indent;
+	}
+
+	li {
+		@include colored-bullets($border-color);
+	}
+
+	blockquote {
+		$border-width: 3px;
+		margin-left: 0;
+		border-left: $border-width solid $border-color;
+		padding-left: $list-and-bq-indent - $border-width;
 	}
 }
 
@@ -106,6 +117,10 @@
 	border-bottom-width: $tail-width;
 	border-bottom-style: dotted;
 
+	@include inactive-link {
+		border-bottom: $tail-width dotted $inactive-color;
+	}
+
 	&:after {
 		content: '';
 
@@ -122,8 +137,8 @@
 		@include single-transition(all, 0.1s, linear, 0);
 	}
 
-	&:hover, &:active, &:focus {
-		border-bottom-width: $tail-width;
+	@include active-link {
+		border-bottom: $tail-width dotted $active-color;
 
 		&:after {
 			border-left-color: $active-color;

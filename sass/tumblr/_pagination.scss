@@ -20,17 +20,22 @@
 		border-width: 0;
 
 		@include inactive-link {
+			color: $pagination-link-text;
 			background: $pagination-link-background;
 		}
 
 		@include active-link {
+			color: $pagination-link-highlight-text;
 			background: $pagination-link-highlight-background;
 		}
 
-		@include link-colors($pagination-link-text, $pagination-link-highlight-text);
-
 		&.current {
-			@include link-colors($pagination-disabled-text, $pagination-disabled-text);
+			@include inactive-link {
+				color: $pagination-disabled-text;
+			}
+			@include active-link {
+				color: $pagination-disabled-text;
+			}
 			pointer-events: none;
 			cursor: not-allowed;
 		}

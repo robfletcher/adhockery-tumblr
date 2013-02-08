@@ -56,7 +56,14 @@ $section-border-width: 20px !default;
     color: $sidebar-text;
 
     a {
-        @include link-colors($sidebar-link-text, $sidebar-link-highlight-text, $sidebar-link-border, $sidebar-link-highlight-border);
+        @include inactive-link {
+            color: $sidebar-link-text;
+            border-bottom: 1px solid $sidebar-link-border;
+        }
+        @include active-link {
+            color: $sidebar-link-highlight-text;
+            border-bottom: 3px solid $sidebar-link-highlight-border;
+        }
     }
 
     strong {
@@ -73,6 +80,12 @@ $section-border-width: 20px !default;
         }
         &:after {
             content: ']';
+        }
+    }
+
+    .links {
+        a {
+            display: list-item;
         }
     }
 }
@@ -126,7 +139,13 @@ $section-border-width: 20px !default;
         font-weight: bold;
 
         background-color: $header-border;
-        @include link-colors($header-link-text, $header-link-highlight-text);
+
+        @include inactive-link {
+            color: $header-link-text;
+        }
+        @include active-link {
+            color: $header-link-highlight-text;
+        }
 
         @include respond-to($breakpoint-intermediate) {
             float: left;
@@ -155,7 +174,7 @@ $section-border-width: 20px !default;
 
     .sidebar {
         margin-top: rhythm(2);
-        padding: 0px 5% 10px;
+        padding: 0px 5% rhythm(1);
     }
 
     .post {

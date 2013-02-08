@@ -10,27 +10,10 @@
 	}	
 }
 
-@mixin link-colors($inactive-color: $link-text, $active-color: $link-highlight-text, $inactive-border: $link-border, $active-border: $link-highlight-border) {
-	@include inactive-link {
-		color: $inactive-color;
-		border-color: $inactive-border;
-	}
-	@include active-link {
-		color: $active-color;
-		border-color: $active-border;
-	}
-}
-
 a {
-	@include link-colors;
-	text-decoration: none;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
+	@include link-colors($link-text, $link-highlight-text);
 	@include single-transition(all, 0.1s, linear, 0);
-
-	@include active-link {
-		border-bottom-width: 3px;
-	}
+	text-decoration: none;
 }
 
 a[rel~=tag]:before {
