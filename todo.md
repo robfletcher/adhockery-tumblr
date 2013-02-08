@@ -13,7 +13,6 @@
 	* disqus
 	* notes
 	* code samples
-	* pagination
 	* read more links
 	* sub-headings
 	* images in posts

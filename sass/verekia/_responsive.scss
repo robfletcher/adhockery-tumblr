@@ -5,12 +5,20 @@ $page-width: 1 - (2 * $page-gutter) !default;
 $sidebar-width: 38% !default;
 $section-border-width: 20px !default;
 
+// layout mixins
+
 @mixin wrapper {
     width: percentage($page-width);
     margin: 0 percentage($page-gutter);
     @include respond-to($breakpoint-maximal) {
         width: $breakpoint-maximal * $page-width; // 1026px
         margin: 0 auto;
+    }
+}
+
+@mixin main-column {
+    @include respond-to($breakpoint-wide) {
+        width: 100% - $sidebar-width - percentage($page-gutter);
     }
 }
 
@@ -150,18 +158,21 @@ $section-border-width: 20px !default;
         padding: 0px 5% 10px;
     }
 
+    .post {
+        @include main-column;
+    }
+
+    .pagination {
+        @include main-column;
+    }
+
     @include respond-to($breakpoint-wide) {
         position: relative;
 
-        .post {
-            width: 100% - $sidebar-width - percentage($page-gutter);
-        }
-
         .sidebar {
             position: absolute;
-            top: rhythm(2);
+            top: 0;
             right: 0;
-            margin-top: 0;
             width: $sidebar-width;
         }
     }

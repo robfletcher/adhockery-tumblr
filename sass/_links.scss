@@ -1,9 +1,21 @@
-@mixin link-colors($inactive-color: $link-text, $active-color: $link-highlight-text, $inactive-border: $link-border, $active-border: $link-highlight-border) {
+@mixin inactive-link {
 	&, &:visited {
+		@content;
+	}	
+}
+
+@mixin active-link {
+	&:hover, &:active, &:focus {
+		@content;
+	}	
+}
+
+@mixin link-colors($inactive-color: $link-text, $active-color: $link-highlight-text, $inactive-border: $link-border, $active-border: $link-highlight-border) {
+	@include inactive-link {
 		color: $inactive-color;
 		border-color: $inactive-border;
 	}
-	&:hover, &:active, &:focus {
+	@include active-link {
 		color: $active-color;
 		border-color: $active-border;
 	}
@@ -16,7 +28,7 @@ a {
 	border-bottom-style: solid;
 	@include single-transition(all, 0.1s, linear, 0);
 
-	&:hover, &:active, &:focus {
+	@include active-link {
 		border-bottom-width: 3px;
 	}
 }

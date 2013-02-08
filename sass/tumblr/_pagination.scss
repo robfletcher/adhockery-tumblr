@@ -1,0 +1,44 @@
+$pagination-link-background: $black;
+$pagination-link-highlight-background: $red;
+$pagination-link-text: $brown;
+$pagination-link-highlight-text: $yellow;
+$pagination-disabled-text: $gray;
+
+@mixin circle($diameter) {
+	width: $diameter;
+	height: $diameter;
+	line-height: $diameter;
+	border-radius: $diameter / 2;
+}
+
+.pagination {
+	margin-top: rhythm(2);
+
+	text-align: center;
+
+	font-family: $accent-font;
+	@include adjust-font-size-to(24px);
+
+	a {
+		display: inline-block;
+		@include circle(rhythm(2, 24px));
+
+		border-width: 0;
+
+		@include inactive-link {
+			background: $pagination-link-background;
+		}
+
+		@include active-link {
+			background: $pagination-link-highlight-background;
+		}
+
+		@include link-colors($pagination-link-text, $pagination-link-highlight-text);
+
+		&.current {
+			@include link-colors($pagination-disabled-text, $pagination-disabled-text);
+			pointer-events: none;
+			cursor: not-allowed;
+		}
+	}
+}
