@@ -1,5 +1,16 @@
+* lettering.js
+* sidebar
+	* twitter
+	* github
+	* stackoverflow
+	* homepage
+	* download this theme
+	* hipster dev stack
+	* personal tumblr
+* unstyled
+	* disqus
+	* notes
+	* code samples
+	* pagination
+	* read more links
 * separate CSS file
-* SCSS
-
-base rhythm: 16/24
-h1: 2em/1.125 = 32/36; margin-bottom: 0.375em
