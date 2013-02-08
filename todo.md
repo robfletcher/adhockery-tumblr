@@ -1,5 +1,4 @@
 * mouseover on title
-* avatar
 * lettering.js
 * sidebar
 	* [twitter](https://twitter.com/rfletcherew)

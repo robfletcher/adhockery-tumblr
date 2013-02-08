@@ -197,6 +197,13 @@
                         <img class="avatar" src="{PortraitURL-64}">{Description}
                     </p>
                     {/block:Description}
+
+                    <nav class="links">
+                        {block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}
+                        {block:AskEnabled}<a href="/ask">ask me anything</a>{/block:AskEnabled}
+                        {block:SubmissionsEnabled}<a href="/submit">submit a post</a>{/block:SubmissionsEnabled}
+                        {block:Twitter}<a href="https://twitter.com/{TwitterUsername}" rel="external">Twitter</a>{/block:Twitter}
+                    </nav>
                 </aside>
 
             </section> <!-- #posts -->
