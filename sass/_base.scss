@@ -1,20 +1,14 @@
-$banner-image: url(http://static.tumblr.com/x4ukvcb/1Upmhffhy/bg.png);
+// these variables must be set first as they influence compass/typography
+$base-font-size: 16px !default;
+$base-line-height: 26px !default;
 
-$small-gutter: 20px !default;
-$large-gutter: 30px !default;
-
-$page-gutter: 0.05 !default;
-$page-width: 1 - (2 * $page-gutter) !default;
-
-$sidebar-width: 38% !default;
+// html5 boilerplate
+// @import "h5bp/base";
+@import "h5bp/helpers";
 
 // compass components
 @import "compass/css3";
 @import "compass/typography";
-
-// html5 boilerplate
-@import "h5bp/base";
-@import "h5bp/helpers";
 
 // theme - mixins & utils
 @import "breakpoints";

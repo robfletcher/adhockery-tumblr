@@ -31,8 +31,10 @@
 			@include rhythm(1, 0, 0, 1);
 		}
 
+		$list-and-bq-indent: 30px;
+
 		ul {
-			padding-left: $large-gutter;
+			padding-left: $list-and-bq-indent;
 		}
 
 		li {
@@ -40,9 +42,10 @@
 		}
 
 		blockquote {
+			$border-width: 3px;
 			margin-left: 0;
-			border-left: 3px solid $border-color;
-			padding-left: $large-gutter - 3px;
+			border-left: $border-width solid $border-color;
+			padding-left: $list-and-bq-indent - $border-width;
 		}
 	}
 
@@ -63,6 +66,7 @@
 
 	img {
 		max-width: 100%;
+		vertical-align: middle;
 	}
 }
 
@@ -74,7 +78,7 @@
 		@include rhythm(1, 0, 0, 1, 32px);
 		margin-left: 0;
 		margin-right: 0;
-		padding-left: 2.5em;
+		padding-left: 1.5em;
 		border-left: 0;
 		position: relative;
 

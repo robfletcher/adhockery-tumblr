@@ -1,5 +1,10 @@
 // Based on: http://verekia.com/initializr/responsive-template
 
+$page-gutter: 0.05 !default;
+$page-width: 1 - (2 * $page-gutter) !default;
+$sidebar-width: 38% !default;
+$section-border-width: 20px !default;
+
 @mixin wrapper {
     width: percentage($page-width);
     margin: 0 percentage($page-gutter);
@@ -28,18 +33,18 @@
     // background-image: $banner-image;
     // background-size: initial;
     background-color: $header-background;
-    border-bottom: $small-gutter solid $header-border;
+    border-bottom: $section-border-width solid $header-border;
 }
 
 .footer-container {
     background-color: $footer-background;
-    border-top: $small-gutter solid $footer-border;
+    border-top: $section-border-width solid $footer-border;
     color: $footer-text;
 }
 
 .sidebar {
     background-color: $sidebar-background;
-    border-top: $small-gutter solid $sidebar-border;
+    border-top: $section-border-width solid $sidebar-border;
     color: $sidebar-text;
 
     a {
@@ -159,13 +164,13 @@
 }
 
 #site-footer {
-    padding: $small-gutter 0;
+    padding: $section-border-width 0;
 }
 
 // IE Fixes
 
 .ie7 .title {
-    padding-top: $small-gutter;
+    padding-top: $section-border-width;
 }
 
 @include respond-to($breakpoint-intermediate) {
