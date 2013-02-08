@@ -6,3 +6,7 @@ $base-leading: 26px !default;
 }
 
 @include establish-baseline;
+
+body {
+	font-family: $base-font;
+}

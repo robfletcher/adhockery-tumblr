@@ -1,5 +1,5 @@
 .post footer {
-	@include adjust-font-size-to(12px);
+	@include adjust-font-size-to(14px);
 	@include rhythm(1, 1, 1, 0);
 	padding-left: rhythm(1);
 	padding-right: rhythm(1);
@@ -13,7 +13,7 @@
 
 .posted-at, .tags, .content-source {
 	display: block;
-	@include rhythm(0.5, 0, 0, 0.5, 12px);
+	@include rhythm(0.5, 0, 0, 0.5, 14px);
 
 	&:first-child {
 		margin-top: 0;

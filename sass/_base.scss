@@ -16,12 +16,14 @@ $sidebar-width: 38% !default;
 @import "h5bp/base";
 @import "h5bp/helpers";
 
-// theme styles
-@import "reset";
+// theme - mixins & utils
 @import "breakpoints";
 @import "googie";
 @import "fonts";
 @import "palette";
+
+// theme - styles
+@import "reset";
 @import "body";
 @import "links";
 @import "lists";
