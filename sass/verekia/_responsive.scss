@@ -135,6 +135,7 @@
     @include rhythm(0, 2, 2, 0);
 
     .sidebar {
+        margin-top: rhythm(2);
         padding: 0px 5% 10px;
     }
 
@@ -149,6 +150,7 @@
             position: absolute;
             top: rhythm(2);
             right: 0;
+            margin-top: 0;
             width: $sidebar-width;
         }
     }
