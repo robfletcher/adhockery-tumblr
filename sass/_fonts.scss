@@ -3,8 +3,11 @@ $header-font: 'Maiden Orange', sans-serif !default;
 $accent-font: 'Kaushan Script', cursive !default;
 
 @mixin header-font($size) {
-	font-family: $header-font;
+	font: {
+		family: $header-font;
+		weight: normal;
+	}
     @include adjust-font-size-to($size);
-    @include rhythm(1, 0, 0, 0.5, $size);
+    padding-top: 0.25em; // fix for maiden orange which renders a bit unevenly
     // todo: add fallback with even rhythm and smaller font size for `.no-webfonts &`
 }

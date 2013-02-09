@@ -109,7 +109,9 @@ $section-border-width: 20px !default;
 }
 
 .title {
-    @include header-font(48px);
+    @include header-font(64px);
+    line-height: 1;
+    margin: 0;
     text-transform: uppercase;
     color: $header-text;
 
@@ -120,6 +122,15 @@ $section-border-width: 20px !default;
     a, a:visited, a:hover, a:active, a:focus {
         color: inherit;
         border-bottom: 0;
+    }
+
+    [class^=char] {
+        &:nth-child(2n) {
+            color: $yellow;
+        }
+        &:nth-child(2n+1) {
+            color: $brown;
+        }
     }
 }
 

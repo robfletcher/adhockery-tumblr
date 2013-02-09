@@ -1,5 +1,4 @@
 * mouseover on title
-* lettering.js
 * sidebar
 	* [twitter](https://twitter.com/rfletcherew)
 	* [github](https://github.com/robfletcher/)
@@ -16,4 +15,5 @@
 	* sub-headings
 	* images in posts
 * fix transition delay on link arrow
+* de-inline noise image
 * separate CSS file
