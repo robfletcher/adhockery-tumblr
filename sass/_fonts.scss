@@ -7,7 +7,16 @@ $accent-font: 'Kaushan Script', cursive !default;
 		family: $header-font;
 		weight: normal;
 	}
-    @include adjust-font-size-to($size);
-    padding-top: 0.25em; // fix for maiden orange which renders a bit unevenly
+	font-size: $font-unit * $size / $base-font-size;
+
+	$font-vertical-adjust: 0.25em; // fix for maiden orange which renders a bit unevenly
+	line-height: rhythm(lines-for-font-size($size), $size) - $font-vertical-adjust;
+    padding-top: $font-vertical-adjust;
     // todo: add fallback with even rhythm and smaller font size for `.no-webfonts &`
+}
+
+@mixin header($size) {
+	@include header-font($size);
+    @include margin-leader(0.5, $size);
+    @include margin-trailer(0.5, $size);
 }

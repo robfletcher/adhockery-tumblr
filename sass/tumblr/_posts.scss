@@ -24,9 +24,7 @@
 
 	header h1 {
 		$size: 48px;
-		@include header-font($size);
-		@include margin-leader(0.5, $size);
-		@include margin-trailer(0.5, $size);
+		@include header($size);
 	}
 
 	figcaption {
@@ -152,9 +150,7 @@
 .link {
 	h1 {
 		$size: 38px;
-		@include header-font($size);
-		@include margin-leader(0.5, $size);
-		@include margin-trailer(0.5, $size);
+		@include header($size);
 
 		a, a:visited {
 			@include border-arrow;
