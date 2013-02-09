@@ -1,4 +1,5 @@
 * mouseover on title
+* font sizes on small screen
 * sidebar
 	* [twitter](https://twitter.com/rfletcherew)
 	* [github](https://github.com/robfletcher/)

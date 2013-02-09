@@ -23,7 +23,7 @@
 	}
 
 	header h1 {
-		$size: 40px;
+		$size: 48px;
 		@include header-font($size);
 		@include margin-leader(0.5, $size);
 		@include margin-trailer(0.5, $size);
@@ -98,10 +98,10 @@
 
 		&:before {
 			content: '\201c';
-			font-family: $base-font;
+			font-family: $header-font;
 			color: $border-color;
 			font-size: 5em;
-			line-height: 0.75;
+			line-height: 1;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -151,7 +151,7 @@
 
 .link {
 	h1 {
-		$size: 32px;
+		$size: 38px;
 		@include header-font($size);
 		@include margin-leader(0.5, $size);
 		@include margin-trailer(0.5, $size);
