@@ -1,0 +1,12 @@
+pre, code, kbd, samp {
+	font-family: $monospace-font;
+}
+
+// allow pre blocks to scroll
+pre {
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto;
+}
+
+@import "prettify/tomorrow";
