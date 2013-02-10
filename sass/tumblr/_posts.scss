@@ -80,6 +80,14 @@
 		border-left: $border-width solid $border-color;
 		padding-left: $list-and-bq-indent - $border-width;
 	}
+
+	h2 {
+		@include header(38px);
+	}
+
+	h3 {
+		@include header(32px);
+	}
 }
 
 .post .photo {
