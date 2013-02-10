@@ -127,25 +127,11 @@ $section-border-width: 20px !default;
 
     [class^=char] {
         display: inline-block;
-        @include single-transition(all, 0.1s, linear, 0);
         &:nth-child(2n) {
             @include logo-text($logo-text-1);
         }
         &:nth-child(2n+1) {
             @include logo-text($logo-text-2);
-        }
-    }
-
-    a {
-        @include active-link {
-            [class^=char] {
-                &:nth-child(2n) {
-                    @include transform(translateY(2px) rotate(3deg));
-                }
-                &:nth-child(2n+1) {
-                    @include transform(translateY(-2px) rotate(-3deg));
-                }
-            }
         }
     }
 }
