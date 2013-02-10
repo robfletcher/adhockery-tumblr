@@ -3,17 +3,18 @@ $header-font: 'Maiden Orange', Impact, Haettenschweiler, "Franklin Gothic Bold",
 $accent-font: 'Kaushan Script', "Brush Script MT", cursive !default;
 $monospace-font: "Courier New", Courier, monospace !default;
 
-@mixin header-font($size) {
-	font: {
-		family: $header-font;
-		weight: normal;
-	}
-	font-size: $font-unit * $size / $base-font-size;
+@mixin header-font($font-size) {
+	font-family: $header-font;
+	@include adjust-font-size-to($font-size);
 
-	$font-vertical-adjust: 0.25em; // fix for maiden orange which renders a bit unevenly
-	line-height: rhythm(lines-for-font-size($size), $size) - $font-vertical-adjust;
-    padding-top: $font-vertical-adjust;
-    // todo: add fallback with even rhythm and smaller font size for `.no-webfonts &`
+    .fontface & {
+    	// Maiden Orange only comes in 400 so prevent browser trying to fake a bold weight
+		font-weight: normal;
+
+		// fix for Maiden Orange which renders a bit unevenly
+		$font-vertical-adjust: 0.25em;
+    	margin-bottom: -$font-vertical-adjust;
+    }
 }
 
 @mixin header($size) {

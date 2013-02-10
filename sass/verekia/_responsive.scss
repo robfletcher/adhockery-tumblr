@@ -122,7 +122,6 @@ $section-border-width: 20px !default;
 
 .title {
     @include header-font(64px);
-    line-height: 1;
     margin: 0;
     text-transform: uppercase;
     color: $header-text;
