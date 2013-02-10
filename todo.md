@@ -1,4 +1,3 @@
-* header font line height screws up border when it spans multiple lines
 * check font sizes on small screen
 * download this theme link (footer)
 * unstyled

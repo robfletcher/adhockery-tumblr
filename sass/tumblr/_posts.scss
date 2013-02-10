@@ -25,6 +25,16 @@
 	header h1 {
 		$size: 48px;
 		@include header($size);
+
+		a {
+			@include inactive-link {
+				border: 0;
+			}
+			@include active-link {
+				color: $post-title-link-highlight-color;
+				border: 0;
+			}
+		}
 	}
 
 	figcaption {
