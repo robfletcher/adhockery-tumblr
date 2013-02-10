@@ -1,3 +1,4 @@
+* top of columns misaligned
 * viewport size
 * header font line height screws up border when it spans multiple lines
 * Disqus is missing
