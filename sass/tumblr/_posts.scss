@@ -70,10 +70,6 @@
 		padding-left: $list-and-bq-indent;
 	}
 
-	li {
-		@include colored-bullets($border-color);
-	}
-
 	blockquote {
 		$border-width: 3px;
 		margin-left: 0;
