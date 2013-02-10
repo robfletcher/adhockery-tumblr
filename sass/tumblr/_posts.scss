@@ -46,6 +46,16 @@
 		display: block;
 		margin: 0 auto rhythm(1);
 	}
+
+	pre {
+		background-color: $code-block-background;
+		padding: rhythm(0.5);
+
+		@include single-box-shadow(transparentize(black, 0.6), 0, 0, 3px, 0, true);
+		.no-boxshadow & {
+			border: 1px solid $border-color;
+		}
+	}
 }
 
 .post-body {

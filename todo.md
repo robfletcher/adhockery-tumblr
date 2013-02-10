@@ -1,7 +1,5 @@
 * font sizes on small screen
 * sidebar
-	* [twitter](https://twitter.com/rfletcherew)
-	* [github](https://github.com/robfletcher/)
 	* [stackoverflow](http://stackoverflow.com/users/565049/pirate-rob)
 	* [homepage](http://freeside.co/)
 	* download this theme
@@ -10,7 +8,6 @@
 * unstyled
 	* disqus
 	* notes
-	* code samples
 	* read more links
 	* sub-headings
 	* images in posts
