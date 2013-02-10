@@ -9,6 +9,8 @@
         <title>{block:SearchPage} ({lang:Search results for SearchQuery}) — {/block:SearchPage}{block:PermalinkPage}{block:PostSummary}{PostSummary} — {/block:PostSummary}{/block:PermalinkPage}{Title}</title>
         <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}">
         <meta name="viewport" content="width=device-width">
+        <meta name="text:Disqus Shortname" content="{text:Disqus Shortname}">
+        <meta name="text:Google Analytics ID" content="{text:Google Analytics ID}">
 
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css">
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Maiden+Orange|Kaushan+Script">
@@ -162,7 +164,7 @@
 
                         {block:IfDisqusShortname}
                         {block:Permalink}
-                        <div id="disqus-thread"></div>
+                        <div id="disqus_thread"></div>
                         <script src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
                         <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
                         {/block:Permalink}
