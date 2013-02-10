@@ -1,9 +1,0 @@
-body {
-	@include opacity(0);
-	@include single-transition(opacity, 0.1s, linear, 0);
-
-	.no-js &, &.ready {
-		@include opacity(1);
-	}
-}
-
