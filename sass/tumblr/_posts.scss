@@ -134,8 +134,6 @@
 
 		border: $arrowhead-size / 2 solid transparent;
 		border-left-color: $inactive-color;
-
-		@include single-transition(all, 0.1s, linear, 0);
 	}
 
 	@include active-link {

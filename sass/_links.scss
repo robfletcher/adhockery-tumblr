@@ -1,17 +1,17 @@
 @mixin inactive-link {
 	&, &:visited {
 		@content;
-	}	
+	}
 }
 
 @mixin active-link {
 	&:hover, &:active, &:focus {
 		@content;
-	}	
+	}
 }
 
 a {
-	@include single-transition(all, 0.1s, linear, 0);
+	@include transition(border 0.1s linear 0, color 0.1s linear 0);
 	text-decoration: none;
 	@include inactive-link {
 		color: $link-text;
@@ -22,7 +22,7 @@ a {
 }
 
 a[rel~=tag]:before {
-  content: '#';
+	content: '#';
 }
 
 #site-nav a {
