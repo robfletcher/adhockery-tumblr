@@ -108,7 +108,7 @@ $section-border-width: 20px !default;
     }
 }
 
-@mixin color-with-shadow($color, $offset: 3px) {
+@mixin logo-text($color, $offset: 3px) {
     color: $color;
     @include text-shadow(-$offset $offset 0 desaturate(darken($color, 30%), 30%));
 }
@@ -124,17 +124,27 @@ $section-border-width: 20px !default;
         float: left;
     }
 
-    a, a:visited, a:hover, a:active, a:focus {
-        color: inherit;
-        border-bottom: 0;
-    }
-
     [class^=char] {
+        display: inline-block;
+        @include single-transition(all, 0.1s, linear, 0);
         &:nth-child(2n) {
-            @include color-with-shadow($yellow);
+            @include logo-text($logo-text-1);
         }
         &:nth-child(2n+1) {
-            @include color-with-shadow($brown);
+            @include logo-text($logo-text-2);
+        }
+    }
+
+    a {
+        @include active-link {
+            [class^=char] {
+                &:nth-child(2n) {
+                    @include transform(translateY(2px) rotate(3deg));
+                }
+                &:nth-child(2n+1) {
+                    @include transform(translateY(-2px) rotate(-3deg));
+                }
+            }
         }
     }
 }
