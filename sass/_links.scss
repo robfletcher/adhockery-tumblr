@@ -11,7 +11,7 @@
 }
 
 a {
-	@include transition(border 0.1s linear 0, color 0.1s linear 0);
+	@include transition(border 0.1s linear, color 0.1s linear);
 	text-decoration: none;
 	@include inactive-link {
 		color: $link-text;

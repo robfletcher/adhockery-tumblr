@@ -16,6 +16,7 @@
 	a {
 		display: inline-block;
 		@include circle(rhythm(2, 24px));
+		@include transition(background 0.1s linear, color 0.1s linear);
 
 		border-width: 0;
 
