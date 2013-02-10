@@ -1,10 +1,5 @@
 * font sizes on small screen
-* sidebar
-	* [stackoverflow](http://stackoverflow.com/users/565049/pirate-rob)
-	* [homepage](http://freeside.co/)
 	* download this theme
-	* [hipster dev stack](http://hipsterdevstack.tumblr.com/)
-	* [personal tumblr](http://piraterob.tumblr.com/)
 * unstyled
 	* disqus
 	* notes
