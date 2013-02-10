@@ -41,6 +41,11 @@
             border-bottom: 3px solid $link-highlight-border;
         }
 	}
+
+	img {
+		display: block;
+		margin: 0 auto rhythm(1);
+	}
 }
 
 .post-body {
