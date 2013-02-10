@@ -4,6 +4,7 @@
 * check font sizes on small screen
 * download this theme link
 * make sidebar text smaller
+* fix list bullets
 * unstyled
 	* disqus
 	* notes
