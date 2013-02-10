@@ -3,7 +3,6 @@
 * Disqus is missing
 * check font sizes on small screen
 * download this theme link
-* make sidebar text smaller
 * unstyled
 	* disqus
 	* notes

@@ -50,9 +50,12 @@ $section-border-width: 20px !default;
 }
 
 .sidebar {
+    $sidebar-font-size: 16px;
+
     background-color: $sidebar-background;
     border-top: $section-border-width solid $sidebar-border;
     color: $sidebar-text;
+    @include adjust-font-size-to($sidebar-font-size);
 
     a {
         @include inactive-link {
@@ -73,13 +76,12 @@ $section-border-width: 20px !default;
 
     strong {
         display: block;
-        @include adjust-font-size-to(20px);
         color: $sidebar-heading;
     }
 
     cite {
         display: block;
-        @include adjust-font-size-to(14px);
+        @include adjust-font-size-to($to-size: 14px, $from-size: $sidebar-font-size);
         &:before {
             content: '[';
         }
@@ -89,14 +91,19 @@ $section-border-width: 20px !default;
     }
 
     .links {
+        @include adjust-font-size-to($to-size: $base-font-size, $from-size: $sidebar-font-size);
         a {
-            display: block;
-            @include rhythm(0.25, 0.25, 0.25, 0.25);
-            padding-left: rhythm(0.25);
-            padding-right: rhythm(0.25);
-            background-color: $nav-background;
+            display: list-item;
+            list-style: {
+                position: inside;
+            }
+            margin: {
+                top: rhythm(0.25);
+                bottom: rhythm(0.25);
+            }
+
             font-family: $accent-font;
-            @include text-shadow(-1px 1px 3px rgba(0, 0, 0, 0.2));
+            @include text-shadow(-1px 1px 3px transparentize($nav-background, 0.8));
             border-bottom: 0;
 
             @include inactive-link {
