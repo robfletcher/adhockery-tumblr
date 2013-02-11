@@ -126,12 +126,23 @@ $section-border-width: 20px !default;
 }
 
 .title {
-    @include header-font(64px);
+    @include header-font(56px);
+    -webkit-text-size-adjust: none;
+    width: 100%;
     margin: 0;
-    text-transform: uppercase;
+    text: {
+        align: center;
+        transform: uppercase;
+    }
     color: $header-text;
 
+    @include respond-to($breakpoint-intermediate) {
+        @include adjust-font-size-to(64px);
+        text-align: left;
+    }
+
     @include respond-to($breakpoint-wide) {
+        width: auto;
         float: left;
     }
 
