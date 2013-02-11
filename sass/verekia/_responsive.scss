@@ -91,6 +91,7 @@ $section-border-width: 20px !default;
 
     h2 {
         @include header(32px);
+        color: $sidebar-heading;
     }
 
     .links {
