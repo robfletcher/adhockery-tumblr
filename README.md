@@ -16,6 +16,6 @@ I used [Jonathan Verrecchia's](https://twitter.com/verekia) [responsive template
 
 The color palette is lifted directly from the banner image for the [Beatnik font](http://www.fontspring.com/fonts/type-innovations/beatnik) by _Type Innovations_.
 
-I'm using [jQuery](http://jquery.com/), [Modernizr](http://modernizr.com/), [Lettering.js](http://letteringjs.com/) & [Google Code Prettify](http://code.google.com/p/google-code-prettify/) with the [Tomorrow theme](http://jmblog.github.com/color-themes-for-google-code-prettify/tomorrow/). The JavaScript for injecting language classes into `code` blocks was adapted from [simonask.tumblr.com](http://simonask.tumblr.com/).
+I'm using [jQuery](http://jquery.com/), [Modernizr](http://modernizr.com/), [Lettering.js](http://letteringjs.com/) & [Google Code Prettify](http://code.google.com/p/google-code-prettify/) with the [Tomorrow theme](http://jmblog.github.com/color-themes-for-google-code-prettify/tomorrow/). The JavaScript for injecting language classes into `code` blocks was adapted from [simonask.tumblr.com](http://simonask.tumblr.com/). The background image was generated using [NoisePNG](http://noisepng.com/).
 
 Web fonts are [Maiden Orange](http://www.google.com/webfonts/specimen/Maiden+Orange) by _[Astigmatic](http://www.astigmatic.com/)_ and [Kaushan Script](http://www.google.com/webfonts/specimen/Kaushan+Script) by _[Pablo Impallari](http://www.impallari.com/)_. Web safe font stacks are from [CSS Font Stack](http://cssfontstack.com/).
