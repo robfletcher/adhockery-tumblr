@@ -2,10 +2,12 @@
 	// force the article to contain the margins of its content http://reference.sitepoint.com/css/collapsingmargins
 	overflow: hidden;
 
-	margin-top: rhythm(2);
-	margin-bottom: rhythm(2);
+	margin: {
+		top: rhythm(2);
+		bottom: rhythm(2);
+	}
 
-	@include googie($post-body-background);
+	background-color: $post-body-background;
 
 	&:first-child {
 		margin-top: 0;
@@ -18,8 +20,10 @@
 
 	header, .post-body, figure, ul.conversation {
 		@include rhythm(1, 0, 0, 1);
-		margin-left: 1em;
-		margin-right: 1em;
+		margin: {
+			left: 1em;
+			right: 1em;
+		}
 	}
 
 	header h1 {
@@ -135,8 +139,10 @@
 		@include adjust-font-size-to(32px);
 		@include adjust-leading-to(2/3);
 		@include rhythm(1, 0, 0, 1, 32px);
-		margin-left: 0;
-		margin-right: 0;
+		margin: {
+			left: 0;
+			right: 0;
+		}
 		padding-left: 1.5em;
 		border-left: 0;
 		position: relative;
@@ -162,8 +168,10 @@
 	position: relative;
 	display: block;
 	margin-right: $arrowhead-size;
-	border-bottom-width: $tail-width;
-	border-bottom-style: dotted;
+	border-bottom: {
+		width: $tail-width;
+		style: dotted;
+	}
 
 	@include inactive-link {
 		border-bottom: $tail-width dotted $inactive-color;
