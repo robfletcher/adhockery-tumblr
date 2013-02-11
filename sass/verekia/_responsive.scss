@@ -251,6 +251,22 @@ $section-border-width: 20px !default;
 
 #site-footer {
     padding: $section-border-width 0;
+    @include adjust-font-size-to(16px);
+
+    a {
+        @include inactive-link {
+            color: $footer-link-text;
+            border-bottom: 1px solid $footer-link-border;
+        }
+        @include active-link {
+            color: $footer-link-highlight-text;
+            border-bottom: 3px solid $footer-link-highlight-border;
+        }
+    }
+
+    .theme {
+        text-align: right;
+    }
 }
 
 // IE Fixes
