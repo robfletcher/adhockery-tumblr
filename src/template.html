@@ -13,7 +13,6 @@
         <meta name="text:Google Analytics ID" content="{text:Google Analytics ID}">
 
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Maiden+Orange|Kaushan+Script">
         <style>
 {{css}}
         </style>
@@ -258,7 +257,21 @@
                 $this.wrap('<figure/>').after($caption);
             });
 
-            $('body').addClass('ready');
+            WebFontConfig = {
+                google: { families: ['Maiden Orange', 'Kaushan Script'] },
+                active: function() {
+                    $('body').addClass('ready');
+                },
+                inactive: function() {
+                    $('body').addClass('ready');
+                }
+            };
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
         });
         </script>
 
