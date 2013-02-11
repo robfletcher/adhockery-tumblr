@@ -252,6 +252,12 @@
             });
             prettyPrint();
 
+            $('.post-body img[title]').each(function(index) { 
+                var $this = $(this);
+                var $caption = $('<figcaption/>', {text: $this.attr('title')}).prepend($('<em/>', {text: 'fig ' + (index+1)}));
+                $this.wrap('<figure/>').after($caption);
+            });
+
             $('body').addClass('ready');
         });
         </script>
