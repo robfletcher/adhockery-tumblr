@@ -202,11 +202,19 @@
                     </p>
                     {/block:Description}
 
+                    <!-- TODO: this needs to be in another file but grunt-combine isn't working with multiple tokens -->
                     <nav class="links">
                         {block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}
                         {block:AskEnabled}<a href="/ask">ask me anything</a>{/block:AskEnabled}
                         {block:SubmissionsEnabled}<a href="/submit">submit a post</a>{/block:SubmissionsEnabled}
-                        {block:Twitter}<a href="https://twitter.com/{TwitterUsername}" rel="external">Twitter</a>{/block:Twitter}
+                        <h2>Find me on&hellip;</h2>
+                        <a href="https://twitter.com/rfletcherEW" rel="external">Twitter</a>
+                        <a href="https://github.com/robfletcher/" rel="external">GitHub</a>
+                        <a href="http://stackoverflow.com/users/565049/pirate-rob" rel="external">Stack Overflow</a>
+                        <h2>There&apos;s also&hellip;</h2>
+                        <a href="http://freeside.co/" rel="external">My portfolio</a>
+                        <a href="http://hipsterdevstack.tumblr.com/" rel="external">Hipster Dev Stack</a>
+                        <a href="http://piraterob.tumblr.com/" rel="external">My personal Tumblr</a>
                     </nav>
                 </aside>
 

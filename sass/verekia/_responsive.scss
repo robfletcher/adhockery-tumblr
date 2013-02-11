@@ -89,6 +89,10 @@ $section-border-width: 20px !default;
         }
     }
 
+    h2 {
+        @include header(32px);
+    }
+
     .links {
         @include adjust-font-size-to($to-size: $base-font-size, $from-size: $sidebar-font-size);
         a {
