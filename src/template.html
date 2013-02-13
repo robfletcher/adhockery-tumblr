@@ -240,19 +240,19 @@
             // ripped off from http://simonask.tumblr.com/
             $('pre code').parent().each(function() {
                 var text = $(this).text();
-                if (text.indexOf('!prettify') == 0) {
+                if (text.indexOf('#!') == 0) {
                     $(this).addClass('prettyprint');
-                    var needle = '!prettify ';
+                    var needle = '#!';
                     var newline_pos = text.indexOf('\n');
                     if (text.substring(0, needle.length) == needle) {
-                        $(this).addClass(text.substring(needle.length, newline_pos));
+                        $(this).addClass('lang-' + text.substring(needle.length, newline_pos));
                     }
                     $(this).text(text.substring(newline_pos+1));
                 }
             });
             prettyPrint();
 
-            $('.post-body img[title]').each(function(index) { 
+            $('.post-body img[title]').each(function(index) {
                 var $this = $(this);
                 var $caption = $('<figcaption/>', {text: $this.attr('title')}).prepend($('<em/>', {text: 'fig ' + (index+1)}));
                 $this.wrap('<figure/>').after($caption);
