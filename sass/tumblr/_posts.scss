@@ -66,6 +66,7 @@
 	pre {
 		background-color: $code-block-background;
 		padding: rhythm(0.5);
+		@include adjust-font-size-to(16px);
 
 		@include single-box-shadow(transparentize(black, 0.6), 0, 0, 3px, 0, true);
 		.no-boxshadow & {
