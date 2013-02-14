@@ -15,8 +15,11 @@ module.exports = (grunt) ->
         input: 'src/template.html'
         output: 'dist/template.html'
         tokens: [
-          token: '{{css}}'
-          file: 'css/theme.css'
+            token: '{{sidebar}}'
+            file: 'src/sidebar.html'
+          ,
+            token: '{{css}}'
+            file: 'css/theme.css'
         ]
 
     watch:
@@ -24,8 +27,8 @@ module.exports = (grunt) ->
         files: ['sass/**/*.{scss,sass}']
         tasks: 'compass'
       combine:
-      	files: ['src/*', 'css/*']
-      	tasks: 'combine'
+        files: ['src/*', 'css/*']
+        tasks: 'combine'
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-compass'
