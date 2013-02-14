@@ -86,6 +86,19 @@
 		padding-left: $list-and-bq-indent;
 	}
 
+	li, dt, dd {
+		@include rhythm(1, 0, 0, 1);
+	}
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		display: list-item;
+		margin-left: $list-and-bq-indent;
+	}
+
 	blockquote {
 		$border-width: 3px;
 		margin-left: 0;
