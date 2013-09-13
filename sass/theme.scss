@@ -1,6 +1,8 @@
 // these variables must be set first as they influence compass/typography
-$base-font-size: 18px !default;
-$base-line-height: 28px !default;
+$base-font-size: 18px;
+$base-line-height: 28px;
+// verekia/responsive settings
+$sidebar-width: 28%;
 
 // compass components
 @import "compass/css3";
@@ -20,6 +22,7 @@ $base-line-height: 28px !default;
 @import "tumblr/posts";
 @import "tumblr/post-footer";
 @import "tumblr/pagination";
+@import "tumblr/tag-page";
 @import "code";
 @import "fouc";
 

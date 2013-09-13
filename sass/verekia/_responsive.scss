@@ -9,8 +9,12 @@ $section-border-width: 20px !default;
 // layout mixins
 
 @mixin wrapper {
-    width: percentage($page-width);
-    margin: 0 percentage($page-gutter);
+    width: 96%;
+    margin: 0 2%;
+    @include respond-to($breakpoint-intermediate) {
+        width: percentage($page-width);
+        margin: 0 percentage($page-gutter);
+    }
     @include respond-to($breakpoint-maximal) {
         width: $breakpoint-maximal * $page-width; // 1026px
         margin: 0 auto;
@@ -199,20 +203,18 @@ $section-border-width: 20px !default;
             color: $nav-link-highlight-text;
         }
 
-        @include respond-to($breakpoint-intermediate) {
-            float: left;
-            width: 31%;
-            margin: 0 1.7%;
-            padding: rhythm(0.5, 20px) 2%;
-            margin-bottom: 0;
+        float: left;
+        width: 31%;
+        margin: 0 1.7%;
+        padding: rhythm(0.5, 20px) 2%;
+        margin-bottom: 0;
 
-            &:first-child {
-                margin-left: 0;
-            }
+        &:first-child {
+            margin-left: 0;
+        }
 
-            &:last-child {
-                margin-right: 0;
-            }
+        &:last-child {
+            margin-right: 0;
         }
     }
 
@@ -221,7 +223,10 @@ $section-border-width: 20px !default;
 // Posts
 
 #posts {
-    @include rhythm(0, 2, 2, 0);
+    @include rhythm(0, 0.5, 0.5, 0);
+    @include respond-to($breakpoint-intermediate) {
+        @include rhythm(0, 2, 2, 0);
+    }
 
     .sidebar {
         @include margin-leader(2, $sidebar-font-size);
